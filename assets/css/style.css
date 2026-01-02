@@ -292,9 +292,6 @@ h3{margin:0 0 8px; font-size:18px}
   border:1px solid var(--line);
 }
 
-.member .muted{
-  white-space: pre-line;
-}
 .member p.muted{
   white-space: pre-line;
   text-indent: -0.6em;
@@ -608,6 +605,7 @@ h3{margin:0 0 8px; font-size:18px}
   border:1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
 }
+
 
 
 
