@@ -39,12 +39,6 @@ body{
   font-family:var(--font);
   color:var(--text);
   line-height:1.6;
-
-  background:
-    radial-gradient(900px 520px at 12% 0%, rgba(30,78,216,.28), transparent 60%),
-    radial-gradient(820px 520px at 88% 6%, rgba(74,163,255,.24), transparent 60%),
-    radial-gradient(900px 600px at 50% 120%, rgba(91,108,255,.16), transparent 60%),
-    linear-gradient(180deg, var(--bg0), var(--bg1));
 }
 
 a{color:var(--blue2); text-decoration:none}
@@ -409,5 +403,6 @@ h3{margin:0 0 8px; font-size:18px}
   border:1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
 }
+
 
 
