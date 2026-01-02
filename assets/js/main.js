@@ -323,6 +323,136 @@ function renderMembers(members) {
   }
 }
 
+function renderGallery(items) {
+  const grid = document.getElementById("galleryGrid");
+  if (!grid) return;
+
+  const tagSelect = document.getElementById("galleryTag");
+  const search = document.getElementById("gallerySearch");
+
+  // tags
+  const allTags = new Set();
+  items.forEach(it => (it.tags || []).forEach(t => allTags.add(t)));
+  if (tagSelect) {
+    [...allTags].sort().forEach(t => {
+      const opt = document.createElement("option");
+      opt.value = t; opt.textContent = t;
+      tagSelect.appendChild(opt);
+    });
+  }
+
+  // lightbox refs
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lightboxImg");
+  const lbTitle = document.getElementById("lightboxTitle");
+  const lbDesc = document.getElementById("lightboxDesc");
+  const lbTags = document.getElementById("lightboxTags");
+  const btnPrev = document.getElementById("lbPrev");
+  const btnNext = document.getElementById("lbNext");
+
+  let current = 0;
+  let filtered = [...items];
+
+  const openLB = (idx) => {
+    current = Math.max(0, Math.min(idx, filtered.length - 1));
+    const it = filtered[current];
+
+    lbImg.src = it.src;
+    lbImg.alt = it.title ? it.title : "gallery image";
+    lbTitle.textContent = it.title || "";
+    lbDesc.textContent = it.desc || (it.date ? it.date : "");
+    lbTags.innerHTML = "";
+    (it.tags || []).forEach(t => {
+      const s = document.createElement("span");
+      s.className = "tag";
+      s.textContent = t;
+      lbTags.appendChild(s);
+    });
+
+    lb.classList.add("open");
+    lb.setAttribute("aria-hidden", "false");
+    document.body.classList.add("no-scroll");
+  };
+
+  const closeLB = () => {
+    lb.classList.remove("open");
+    lb.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("no-scroll");
+    // prevent flicker on next open
+    lbImg.src = "";
+  };
+
+  const go = (delta) => {
+    if (!filtered.length) return;
+    const next = (current + delta + filtered.length) % filtered.length;
+    openLB(next);
+  };
+
+  // close handlers
+  lb?.addEventListener("click", (e) => {
+    if (e.target && e.target.dataset && e.target.dataset.close === "1") closeLB();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (!lb.classList.contains("open")) return;
+    if (e.key === "Escape") closeLB();
+    if (e.key === "ArrowLeft") go(-1);
+    if (e.key === "ArrowRight") go(1);
+  });
+  btnPrev?.addEventListener("click", () => go(-1));
+  btnNext?.addEventListener("click", () => go(1));
+
+  const render = () => {
+    const q = (search?.value || "").trim().toLowerCase();
+    const tag = (tagSelect?.value || "").trim();
+
+    filtered = items.filter(it => {
+      const hay = `${it.title || ""} ${it.desc || ""} ${it.date || ""} ${(it.tags || []).join(" ")}`.toLowerCase();
+      const matchQ = !q || hay.includes(q);
+      const matchT = !tag || (it.tags || []).includes(tag);
+      return matchQ && matchT;
+    });
+
+    grid.innerHTML = "";
+    filtered.forEach((it, idx) => {
+      const card = document.createElement("button");
+      card.type = "button";
+      card.className = "gallery-item";
+      card.setAttribute("aria-label", `${it.title || "Photo"} 확대보기`);
+
+      const img = document.createElement("img");
+      img.className = "gallery-thumb";
+      img.src = it.thumb || it.src;
+      img.alt = it.title || "Gallery photo";
+      img.loading = "lazy";
+      img.decoding = "async";
+
+      const cap = document.createElement("div");
+      cap.className = "gallery-cap";
+      cap.innerHTML = `
+        <div class="gallery-title">${safeText(it.title || "")}</div>
+        <div class="gallery-sub muted">${safeText(it.date || "")}</div>
+      `;
+
+      card.appendChild(img);
+      card.appendChild(cap);
+      card.addEventListener("click", () => openLB(idx));
+      grid.appendChild(card);
+    });
+
+    if (!filtered.length) {
+      const empty = document.createElement("div");
+      empty.className = "card";
+      empty.innerHTML = `<div class="card-title">No results</div><p class="muted">검색 조건을 바꿔보세요.</p>`;
+      grid.appendChild(empty);
+    }
+  };
+
+  search?.addEventListener("input", render);
+  tagSelect?.addEventListener("change", render);
+
+  render();
+}
+
 function renderContact(site) {
   const contactCard = document.getElementById("contactCard");
   const recruitCard = document.getElementById("recruitCard");
@@ -367,15 +497,18 @@ async function main() {
     renderHero(site);
     const news = await fetchJSON("data/news.json");
     renderNews(news);
+  } else if (page === "members") {
+    const members = await fetchJSON("data/members.json");
+    renderMembers(members);
   } else if (page === "projects") {
     const projects = await fetchJSON("data/projects.json");
     renderProjects(projects);
   } else if (page === "publications") {
     const pubs = await fetchJSON("data/publications.json");
     renderPublications(pubs);
-  } else if (page === "members") {
-    const members = await fetchJSON("data/members.json");
-    renderMembers(members);
+  } else if (page === "gallery") {
+    const items = await fetchJSON("data/gallery.json");
+    renderGallery(items);
   } else if (page === "contact") {
     renderContact(site);
   }
@@ -391,4 +524,5 @@ main().catch((e) => {
     mainEl.prepend(err);
   }
 });
+
 
