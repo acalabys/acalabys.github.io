@@ -25,41 +25,6 @@
       "bio": "Topic: Multimodal AI hardware, pruning/sparsity",
       "photo": "assets/img/members/mjpark.jpg",
       "links": []
-    },
-    {
-      "name": "Junyoung Park",
-      "role": "M.S. Candidate",
-      "bio": "Topic: AI accelerator design, RAG systems",
-      "photo": "assets/img/members/jypark.jpg",
-      "links": []
-    },
-    {
-      "name": "Jiyun Han",
-      "role": "M.S. Candidate",
-      "bio": "Topic: LLM acceleration, KV cache optimization",
-      "photo": "assets/img/members/jyhan.jpg",
-      "links": []
-    },
-    {
-      "name": "Yeonsik Park",
-      "role": "M.S. Candidate",
-      "bio": "Topic: LLM acceleration and quantization",
-      "photo": "assets/img/members/yspark.jpg",
-      "links": []
-    },
-    {
-      "name": "Hyeonseong Kim",
-      "role": "M.S. Candidate",
-      "bio": "Topic: AI accelerator design, LLM acceleration",
-      "photo": "assets/img/members/hskim.jpg",
-      "links": []
-    },
-    {
-      "name": "Myeongjin Kim",
-      "role": "M.S. Candidate",
-      "bio": "Topic: LLM acceleration, SW-HW Co-design",
-      "photo": "assets/img/members/mjkim.jpg",
-      "links": []
     }
   ],
   "alumni": [
@@ -72,5 +37,6 @@
     }
   ]
 }
+
 
 
