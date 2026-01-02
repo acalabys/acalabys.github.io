@@ -271,27 +271,42 @@ function renderMembers(members) {
   const alumniGrid = document.getElementById("alumniGrid");
 
   const renderCard = (m) => {
-    const card = el("article", "member card glass");
+  const card = el("article", "member card glass");
+
+  // photo or fallback avatar
+  let left;
+  if (m.photo && String(m.photo).trim().length > 0) {
+    const img = document.createElement("img");
+    img.className = "avatar-img";
+    img.src = m.photo;
+    img.alt = `${m.name || "Member"} photo`;
+    img.loading = "lazy";
+    img.decoding = "async";
+    left = img;
+  } else {
     const avatar = el("div", "avatar");
     avatar.textContent = (m.name || "M").trim().slice(0, 2).toUpperCase();
-    const body = el("div", "");
-    body.appendChild(el("div", "card-title", safeText(m.name)));
-    body.appendChild(el("p", "muted", safeText(`${m.role || ""}${m.bio ? " · " + m.bio : ""}`)));
+    left = avatar;
+  }
 
-    if (Array.isArray(m.links) && m.links.length) {
-      const row = el("div", "link-row");
-      m.links.forEach(l => {
-        const a = el("a", "link", safeText(l.label));
-        a.href = l.href;
-        if (/^https?:\/\//.test(l.href)) { a.target = "_blank"; a.rel = "noopener"; }
-        row.appendChild(a);
-      });
-      body.appendChild(row);
-    }
+  const body = el("div", "");
+  body.appendChild(el("div", "card-title", safeText(m.name)));
+  body.appendChild(el("p", "muted", safeText(`${m.role || ""}${m.bio ? " · " + m.bio : ""}`)));
 
-    card.appendChild(avatar);
-    card.appendChild(body);
-    return card;
+  if (Array.isArray(m.links) && m.links.length) {
+    const row = el("div", "link-row");
+    m.links.forEach(l => {
+      const a = el("a", "link", safeText(l.label));
+      a.href = l.href;
+      if (/^https?:\/\//.test(l.href)) { a.target = "_blank"; a.rel = "noopener"; }
+      row.appendChild(a);
+    });
+    body.appendChild(row);
+  }
+
+  card.appendChild(left);
+  card.appendChild(body);
+  return card;
   };
 
   if (piGrid) {
@@ -376,3 +391,4 @@ main().catch((e) => {
     mainEl.prepend(err);
   }
 });
+
