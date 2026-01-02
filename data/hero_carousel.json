@@ -6,15 +6,16 @@
     "link": "gallery.html"
   },
   {
-    "img": "assets/img/gallery/seminar-2025-11.jpg",
-    "title": "Weekly Seminar",
+    "img": "assets/img/gallery/highlightpaper.jpg",
+    "title": "Recent Research Highlight",
     "caption": "Low-precision formats & memory bottlenecks discussion.",
     "link": "gallery.html"
   },
   {
-    "img": "assets/img/gallery/demo-day.jpg",
-    "title": "Demo Day",
+    "img": "assets/img/gallery/conference.jpg",
+    "title": "Visiting DAC 2025",
     "caption": "Project demos and poster session.",
     "link": "projects.html"
   }
 ]
+
