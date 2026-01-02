@@ -472,6 +472,94 @@ h3{margin:0 0 8px; font-size:18px}
   .lightbox-panel{ margin: 14px auto; }
 }
 
+/* ===== Hero Carousel (right card) ===== */
+.carousel{
+  position:relative;
+  border-radius: var(--radius);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.14); /* hero 카드가 블루일 때도 어울림 */
+}
+
+.carousel-stage{
+  display:block;
+  position:relative;
+  text-decoration:none;
+}
+
+.carousel-stage img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  display:block;
+  background: rgba(255,255,255,.06);
+}
+
+/* caption overlay */
+.carousel-overlay{
+  position:absolute;
+  left:0; right:0; bottom:0;
+  padding:14px 14px 12px;
+  background: rgba(0,0,0,.35);
+  color: #fff;
+  backdrop-filter: blur(6px);
+}
+
+.carousel-title{
+  font-weight:900;
+  letter-spacing:-0.2px;
+  font-size:16px;
+  color:#fff;
+}
+
+.carousel-cap{
+  margin-top:6px;
+  font-size:13px;
+  color: rgba(255,255,255,.85);
+}
+
+/* nav buttons */
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:40px;
+  height:40px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.22);
+  background: rgba(0,0,0,.22);
+  color:#fff;
+  font-size:22px;
+  line-height:1;
+  cursor:pointer;
+}
+.carousel-btn:hover{ filter:brightness(1.06); }
+.carousel-btn.prev{ left:10px; }
+.carousel-btn.next{ right:10px; }
+
+/* dots */
+.carousel-dots{
+  display:flex;
+  gap:8px;
+  justify-content:center;
+  padding:12px 0 2px;
+}
+.dot{
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  border:none;
+  background: rgba(255,255,255,.35);
+  cursor:pointer;
+}
+.dot.active{
+  background: rgba(255,255,255,.95);
+}
+
+/* responsive height */
+@media (max-width: 860px){
+  .carousel-stage img{ height:260px; }
+}
+
 .avatar-img{
   width:48px;
   height:48px;
@@ -480,6 +568,7 @@ h3{margin:0 0 8px; font-size:18px}
   border:1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
 }
+
 
 
 
