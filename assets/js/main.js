@@ -271,23 +271,30 @@ function renderMembers(members) {
   const alumniGrid = document.getElementById("alumniGrid");
 
   const renderCard = (m) => {
-  const card = el("article", "member card glass");
+  const roleClass = (m.role || "").toLowerCase().includes("prof")
+  ? "member-pi"
+  : (m.role || "").toLowerCase().includes("ph")
+    ? "member-student"
+    : "member-alumni";
+  const card = el("article", `member card glass ${roleClass}`);
 
   // photo or fallback avatar
-  let left;
-  if (m.photo && String(m.photo).trim().length > 0) {
-    const img = document.createElement("img");
-    img.className = "avatar-img";
-    img.src = m.photo;
-    img.alt = `${m.name || "Member"} photo`;
-    img.loading = "lazy";
-    img.decoding = "async";
-    left = img;
-  } else {
-    const avatar = el("div", "avatar");
-    avatar.textContent = (m.name || "M").trim().slice(0, 2).toUpperCase();
-    left = avatar;
+  let left = null;
+  if (!card.classList.contains("member-alumni")) {
+    if (m.photo && String(m.photo).trim().length > 0) {
+      const img = document.createElement("img");
+      img.className = "avatar-img";
+      img.src = m.photo;
+      img.alt = `${m.name || "Member"} photo`;
+      img.loading = "lazy";
+      left = img;
+    } else {
+      const avatar = el("div", "avatar");
+      avatar.textContent = (m.name || "M").trim().slice(0, 2).toUpperCase();
+      left = avatar;
+    }
   }
+  if (left) card.appendChild(left);
 
   const body = el("div", "");
   body.appendChild(el("div", "card-title", safeText(m.name)));
@@ -595,6 +602,7 @@ main().catch((e) => {
     mainEl.prepend(err);
   }
 });
+
 
 
 
