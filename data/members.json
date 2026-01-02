@@ -3,7 +3,7 @@
     {
       "name": "Seungkyu Choi",
       "role": "Principal Investigator",
-      "bio": "\nResearch interests: \nSoC/FPGA \nAI accelerators \nMemory systems.",
+      "bio": "\nResearch interests: \n\t- SoC/FPGA \n\t- AI accelerators \n\t- Memory systems.",
       "photo": "assets/img/members/mine.jpg",
       "links": [
         { "label": "Homepage", "href": "#" },
@@ -72,6 +72,7 @@
     }
   ]
 }
+
 
 
 
