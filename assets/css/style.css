@@ -294,8 +294,13 @@ h3{margin:0 0 8px; font-size:18px}
 
 .member p.muted{
   white-space: pre-line;
-  text-indent: -0.6em;
   padding-left: 0.6em;
+  text-indent: -0.6em;
+}
+
+.member p.muted::first-line{
+  text-indent: 0;
+  padding-left: 0;
 }
 
 .member-pi .avatar,
@@ -605,6 +610,7 @@ h3{margin:0 0 8px; font-size:18px}
   border:1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
 }
+
 
 
 
