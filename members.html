@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <script defer src="assets/js/main.js"></script>
 </head>
-<body>
+<body data-page="members">
   <header class="header">
     <div class="container nav">
-      <a class="brand" href="index.html"><span class="brand-mark">DSL</span><span class="brand-name">Digital Systems Lab</span></a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">메뉴</button>
+      <a class="brand" href="index.html"><span class="brand-mark" id="brandMark">DSL</span><span class="brand-name" id="brandName">Digital Systems Lab</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
       <nav id="nav-menu" class="nav-menu" aria-label="주요 메뉴">
         <a href="index.html">Home</a>
         <a href="projects.html">Projects</a>
@@ -23,47 +23,37 @@
   </header>
 
   <main class="container page">
-    <h1>Members</h1>
-
-    <h2>PI</h2>
-    <div class="member-grid">
-      <article class="member card">
-        <div class="avatar" aria-hidden="true">PI</div>
-        <div>
-          <div class="card-title">Prof. Name</div>
-          <p class="muted">Affiliation · Research interests</p>
-          <div class="member-links">
-            <a href="#" target="_blank" rel="noopener">Homepage</a>
-            <a href="#" target="_blank" rel="noopener">Google Scholar</a>
-            <a href="#" target="_blank" rel="noopener">ORCID</a>
-          </div>
-        </div>
-      </article>
+    <div class="page-head">
+      <h1>Members</h1>
+      <p class="muted">멤버는 <code>data/members.json</code>에서 관리합니다.</p>
     </div>
 
-    <h2>Students</h2>
-    <div class="member-grid">
-      <article class="member card">
-        <div class="avatar" aria-hidden="true">S</div>
-        <div>
-          <div class="card-title">Student Name</div>
-          <p class="muted">M.S./Ph.D. · Topic</p>
-        </div>
-      </article>
-      <article class="member card">
-        <div class="avatar" aria-hidden="true">S</div>
-        <div>
-          <div class="card-title">Student Name</div>
-          <p class="muted">Undergrad · Topic</p>
-        </div>
-      </article>
-    </div>
+    <section class="block">
+      <div class="block-head">
+        <h2>PI</h2>
+      </div>
+      <div class="member-grid" id="piGrid"></div>
+    </section>
+
+    <section class="block">
+      <div class="block-head">
+        <h2>Students</h2>
+      </div>
+      <div class="member-grid" id="studentGrid"></div>
+    </section>
+
+    <section class="block">
+      <div class="block-head">
+        <h2>Alumni</h2>
+      </div>
+      <div class="member-grid" id="alumniGrid"></div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div class="muted small">© <span id="year"></span> Digital Systems Lab.</div>
-      <div class="footer-links"><a href="contact.html">Contact</a></div>
+      <div class="muted small">© <span id="year"></span> <span id="footerOrg"></span></div>
+      <div class="footer-links" id="footerLinks"></div>
     </div>
   </footer>
 </body>
