@@ -485,6 +485,75 @@ function renderContact(site) {
   `;
 }
 
+function initHeroCarousel(items) {
+  const root = document.getElementById("heroCarousel");
+  if (!root) return;
+
+  const img = document.getElementById("heroCarouselImg");
+  const title = document.getElementById("heroCarouselTitle");
+  const cap = document.getElementById("heroCarouselCap");
+  const link = document.getElementById("heroCarouselLink");
+  const dots = document.getElementById("heroCarouselDots");
+  const btnPrev = root.querySelector(".carousel-btn.prev");
+  const btnNext = root.querySelector(".carousel-btn.next");
+
+  if (!Array.isArray(items) || items.length === 0) return;
+
+  let idx = 0;
+
+  const render = () => {
+    const it = items[idx];
+    img.src = it.img;
+    img.alt = it.title || "highlight";
+    title.textContent = it.title || "";
+    cap.textContent = it.caption || "";
+    link.href = it.link || "gallery.html";
+
+    // dots
+    dots.innerHTML = "";
+    items.forEach((_, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "dot" + (i === idx ? " active" : "");
+      b.setAttribute("aria-label", `Go to slide ${i + 1}`);
+      b.addEventListener("click", () => { idx = i; render(); });
+      dots.appendChild(b);
+    });
+  };
+
+  const go = (delta) => {
+    idx = (idx + delta + items.length) % items.length;
+    render();
+  };
+
+  btnPrev?.addEventListener("click", () => go(-1));
+  btnNext?.addEventListener("click", () => go(1));
+
+  // keyboard support
+  root.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") go(-1);
+    if (e.key === "ArrowRight") go(1);
+  });
+
+  // swipe (touch)
+  let startX = null;
+  root.addEventListener("touchstart", (e) => { startX = e.touches[0].clientX; }, { passive: true });
+  root.addEventListener("touchend", (e) => {
+    if (startX == null) return;
+    const endX = e.changedTouches[0].clientX;
+    const dx = endX - startX;
+    startX = null;
+    if (Math.abs(dx) > 40) go(dx > 0 ? -1 : 1);
+  }, { passive: true });
+
+  // optional auto-advance (원치 않으면 삭제)
+  let timer = setInterval(() => go(1), 6500);
+  root.addEventListener("mouseenter", () => { clearInterval(timer); });
+  root.addEventListener("mouseleave", () => { timer = setInterval(() => go(1), 6500); });
+
+  render();
+}
+
 async function main() {
   setYear();
   setupMobileNav();
@@ -497,6 +566,8 @@ async function main() {
     renderHero(site);
     const news = await fetchJSON("data/news.json");
     renderNews(news);
+    const slides = await fetchJSON("data/hero_carousel.json");
+    initHeroCarousel(slides);
   } else if (page === "members") {
     const members = await fetchJSON("data/members.json");
     renderMembers(members);
@@ -524,5 +595,6 @@ main().catch((e) => {
     mainEl.prepend(err);
   }
 });
+
 
 
