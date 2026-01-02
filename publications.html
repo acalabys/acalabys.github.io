@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Publications | Digital Systems Lab</title>
+  <title>Projects | Digital Systems Lab</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <script defer src="assets/js/main.js"></script>
 </head>
-<body>
+<body data-page="projects">
   <header class="header">
     <div class="container nav">
-      <a class="brand" href="index.html"><span class="brand-mark">DSL</span><span class="brand-name">Digital Systems Lab</span></a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">메뉴</button>
+      <a class="brand" href="index.html"><span class="brand-mark" id="brandMark">DSL</span><span class="brand-name" id="brandName">Digital Systems Lab</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
       <nav id="nav-menu" class="nav-menu" aria-label="주요 메뉴">
         <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a class="active" href="publications.html">Publications</a>
+        <a class="active" href="projects.html">Projects</a>
+        <a href="publications.html">Publications</a>
         <a href="members.html">Members</a>
         <a href="contact.html">Contact</a>
       </nav>
@@ -23,33 +23,25 @@
   </header>
 
   <main class="container page">
-    <h1>Publications</h1>
-    <p class="muted">연도별/주제별로 정리하면 좋습니다.</p>
-
-    <div class="pub-controls">
-      <input id="pubSearch" class="input" type="search" placeholder="검색: 제목/키워드" />
+    <div class="page-head">
+      <h1>Projects</h1>
+      <p class="muted">프로젝트는 <code>data/projects.json</code>만 수정하면 자동 반영됩니다.</p>
     </div>
 
-    <ol id="pubList" class="pub-list">
-      <li class="pub">
-        <div class="pub-title">Paper Title (Conference/Journal, Year)</div>
-        <div class="pub-meta muted">
-          Author A, Author B, <b>Your Lab</b>
-          · <a href="#" target="_blank" rel="noopener">PDF</a>
-          · <a href="#" target="_blank" rel="noopener">Code</a>
-        </div>
-      </li>
-      <li class="pub">
-        <div class="pub-title">Another Paper Title (Venue, Year)</div>
-        <div class="pub-meta muted">Author ... · <a href="#">PDF</a></div>
-      </li>
-    </ol>
+    <div class="filters">
+      <input id="projectSearch" class="input" type="search" placeholder="검색: 제목/키워드" />
+      <select id="projectTag" class="select">
+        <option value="">All tags</option>
+      </select>
+    </div>
+
+    <div class="card-list" id="projectsList"></div>
   </main>
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div class="muted small">© <span id="year"></span> Digital Systems Lab.</div>
-      <div class="footer-links"><a href="contact.html">Contact</a></div>
+      <div class="muted small">© <span id="year"></span> <span id="footerOrg"></span></div>
+      <div class="footer-links" id="footerLinks"></div>
     </div>
   </footer>
 </body>
