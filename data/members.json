@@ -2,11 +2,11 @@
   "pi": [
     {
       "name": "Seungkyu Choi",
-      "role": "Principal Investigator",
+      "role": "Assistant Professor",
       "bio": "Research interests: \n\t● SoC/FPGA \n\t● AI accelerators \n\t● Memory systems.",
       "photo": "assets/img/members/mine.jpg",
       "links": [
-        { "label": "Homepage", "href": "#" },
+        { "label": "More about me", "href": "#" },
         { "label": "Scholar", "href": "#" }
       ]
     }
@@ -72,6 +72,7 @@
     }
   ]
 }
+
 
 
 
