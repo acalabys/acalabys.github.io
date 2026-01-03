@@ -278,19 +278,143 @@ h3{margin:0 0 8px; font-size:18px}
 }
 .input::placeholder{color:#94a3b8}
 
-/* Publications */
-.pub-list{padding-left:18px; margin:0; display:grid; gap:14px}
-.pub{padding:16px}
-.pub-title{font-weight:900}
-.pub-sub{display:flex; gap:8px; flex-wrap:wrap; margin-top:8px}
+/* ===== Publications (Card Style) ===== */
+.pub-filters{
+  align-items:center;
+}
 
-.pill{
-  font-size:12px;
-  padding:5px 10px;
+.seg{
+  display:inline-flex;
+  gap:6px;
+  padding:6px;
   border-radius:999px;
-  background:#eef2ff;
-  color:#3730a3;
-  border:1px solid #dbeafe;
+  background: rgba(255,255,255,.7);
+  border:1px solid var(--line);
+}
+
+.seg-btn{
+  border:none;
+  background:transparent;
+  padding:10px 12px;
+  border-radius:999px;
+  cursor:pointer;
+  color: var(--muted);
+  font-weight:700;
+}
+
+.seg-btn.active{
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+  border:1px solid #c7dcff;
+}
+
+.pub-year{
+  margin-top: 18px;
+}
+
+.pub-year-head{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  padding: 8px 2px 12px;
+}
+
+.pub-card-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:14px;
+}
+
+.pub-card{
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.pub-title{
+  font-weight: 900;
+  letter-spacing: -0.2px;
+}
+
+.pub-meta{
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.pub-where{
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+.pub-detail{
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.mark-row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top: 12px;
+}
+
+/* base mark */
+.mark{
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.65);
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* special marks (optional tone) */
+.mark-top-tier{
+  border-color:#b7cffc;
+  background:#e8f0ff;
+  color:#1e3a8a;
+}
+.mark-scie-q1{
+  border-color:#cfe8d6;
+  background:#eaf7ee;
+  color:#14532d;
+}
+.mark-major{
+  border-color:#e6d8b7;
+  background:#fff7e6;
+  color:#7c2d12;
+}
+
+.pub-links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top: 12px;
+}
+
+.pub-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border:1px solid var(--line);
+  background: var(--card-soft);
+  color: var(--blue-dark);
+  font-weight: 800;
+}
+
+.pub-link:hover{
+  text-decoration:none;
+  filter: brightness(1.02);
+}
+
+@media (max-width: 860px){
+  .pub-card-grid{ grid-template-columns: 1fr; }
 }
 
 /* Members */
@@ -643,6 +767,7 @@ h3{margin:0 0 8px; font-size:18px}
   border:1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
 }
+
 
 
 
