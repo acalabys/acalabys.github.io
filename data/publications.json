@@ -21,7 +21,7 @@
     "authors": "C. Student, Prof. XXX",
     "venue": "IEEE TCAD",
     "detail": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems",
-    "marks": ["scie-q1"],
+    "marks": ["scie"],
     "links": [
       { "label": "Paper", "href": "#" }
     ]
@@ -40,5 +40,6 @@
     ]
   }
 ]
+
 
 
