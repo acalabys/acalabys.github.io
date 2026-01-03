@@ -191,78 +191,178 @@ function renderResearch(research) {
   render("", "");
 }
 
-function renderPublications(pubs) {
-  const list = document.getElementById("pubList");
-  if (!list) return;
+function normalizePub(p) {
+  const year = Number(p.year) || 0;
+  const region = (p.region || "").toLowerCase();
+  const type = (p.type || "").toLowerCase();
+  const marks = Array.isArray(p.marks) ? p.marks.map(x => String(x).toLowerCase()) : [];
+  const links = Array.isArray(p.links) ? p.links : [];
+  return { ...p, year, region, type, marks, links };
+}
 
-  // sort newest first
-  pubs = [...pubs].sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
+function renderPublications(itemsRaw) {
+  const container = document.getElementById("pubContainer");
+  if (!container) return;
 
-  // year dropdown
-  const yearSelect = document.getElementById("pubYear");
-  const years = [...new Set(pubs.map(p => p.year).filter(Boolean))].sort((a,b)=>b-a);
-  if (yearSelect) years.forEach(y => {
-    const opt = document.createElement("option");
-    opt.value = String(y); opt.textContent = String(y);
-    yearSelect.appendChild(opt);
+  const items = (itemsRaw || []).map(normalizePub);
+
+  const regionSeg = document.getElementById("pubRegion");
+  const typeSel = document.getElementById("pubType");
+  const searchIn = document.getElementById("pubSearch");
+
+  const MARK_LABEL = {
+    "top-tier": "Top-tier",
+    "major": "Major",
+    "scie-q1": "SCIE Q1",
+    "scie": "SCIE",
+    "best-paper": "Best Paper",
+    "oral": "Oral"
+  };
+
+  let state = { region: "", type: "", q: "" };
+
+  const setActiveSeg = (region) => {
+    if (!regionSeg) return;
+    [...regionSeg.querySelectorAll(".seg-btn")].forEach(btn => {
+      btn.classList.toggle("active", (btn.dataset.region || "") === region);
+    });
+  };
+
+  const apply = () => {
+    const q = (state.q || "").trim().toLowerCase();
+
+    const filtered = items.filter(p => {
+      const matchRegion = !state.region || p.region === state.region;
+      const matchType = !state.type || p.type === state.type;
+
+      const hay = [
+        p.title, p.authors, p.venue, p.detail,
+        String(p.year),
+        (p.marks || []).join(" "),
+        p.region, p.type
+      ].join(" ").toLowerCase();
+
+      const matchQ = !q || hay.includes(q);
+      return matchRegion && matchType && matchQ;
+    });
+
+    // group by year desc
+    const byYear = new Map();
+    filtered
+      .sort((a, b) => (b.year - a.year) || (String(a.title).localeCompare(String(b.title))))
+      .forEach(p => {
+        if (!byYear.has(p.year)) byYear.set(p.year, []);
+        byYear.get(p.year).push(p);
+      });
+
+    container.innerHTML = "";
+
+    if (byYear.size === 0) {
+      const empty = document.createElement("div");
+      empty.className = "card";
+      empty.innerHTML = `<div class="card-title">No results</div><p class="muted">필터/검색 조건을 바꿔보세요.</p>`;
+      container.appendChild(empty);
+      return;
+    }
+
+    for (const [year, pubs] of byYear.entries()) {
+      const sec = document.createElement("section");
+      sec.className = "pub-year";
+
+      const h = document.createElement("div");
+      h.className = "pub-year-head";
+      h.innerHTML = `<h2>${year}</h2><div class="muted small">${pubs.length} item(s)</div>`;
+      sec.appendChild(h);
+
+      const grid = document.createElement("div");
+      grid.className = "pub-card-grid";
+
+      pubs.forEach(p => {
+        const card = document.createElement("article");
+        card.className = "pub-card";
+
+        const top = document.createElement("div");
+        top.className = "pub-top";
+
+        const title = document.createElement("div");
+        title.className = "pub-title";
+        title.textContent = p.title || "";
+
+        const meta = document.createElement("div");
+        meta.className = "pub-meta muted";
+        meta.textContent = `${p.authors || ""}`;
+
+        const where = document.createElement("div");
+        where.className = "pub-where";
+        where.textContent = [p.venue, p.type ? `(${p.type})` : "", p.region ? `· ${p.region}` : ""]
+          .filter(Boolean).join(" ");
+
+        const detail = document.createElement("div");
+        detail.className = "pub-detail muted";
+        detail.textContent = p.detail || "";
+
+        top.appendChild(title);
+        top.appendChild(meta);
+        top.appendChild(where);
+        if (p.detail) top.appendChild(detail);
+
+        // marks
+        const marksRow = document.createElement("div");
+        marksRow.className = "mark-row";
+        (p.marks || []).forEach(mk => {
+          const span = document.createElement("span");
+          span.className = `mark mark-${mk}`;
+          span.textContent = MARK_LABEL[mk] || mk;
+          marksRow.appendChild(span);
+        });
+
+        // links
+        const linksRow = document.createElement("div");
+        linksRow.className = "pub-links";
+
+        (p.links || []).forEach(l => {
+          const a = document.createElement("a");
+          a.className = "pub-link";
+          a.textContent = l.label || "Link";
+          a.href = l.href || "#";
+          if (/^https?:\/\//.test(a.href)) { a.target = "_blank"; a.rel = "noopener"; }
+          linksRow.appendChild(a);
+        });
+
+        card.appendChild(top);
+        if (marksRow.childNodes.length) card.appendChild(marksRow);
+        if (linksRow.childNodes.length) card.appendChild(linksRow);
+
+        grid.appendChild(card);
+      });
+
+      sec.appendChild(grid);
+      container.appendChild(sec);
+    }
+  };
+
+  // events
+  regionSeg?.addEventListener("click", (e) => {
+    const btn = e.target.closest(".seg-btn");
+    if (!btn) return;
+    state.region = btn.dataset.region || "";
+    setActiveSeg(state.region);
+    apply();
   });
 
-  const typeSelect = document.getElementById("pubType");
-  const search = document.getElementById("pubSearch");
+  typeSel?.addEventListener("change", () => {
+    state.type = typeSel.value || "";
+    apply();
+  });
 
-  const toHTML = (p) => {
-    const title = safeText(p.title);
-    const venue = safeText(p.venue || "");
-    const year = safeText(p.year || "");
-    const authors = safeText((p.authors || []).join(", "));
-    const kw = (p.keywords || []).map(k => `<span class="tag">${safeText(k)}</span>`).join("");
+  searchIn?.addEventListener("input", () => {
+    state.q = searchIn.value || "";
+    apply();
+  });
 
-    const links = [];
-    if (p.links?.pdf) links.push(`<a class="link" href="${p.links.pdf}" target="_blank" rel="noopener">PDF</a>`);
-    if (p.links?.code) links.push(`<a class="link" href="${p.links.code}" target="_blank" rel="noopener">Code</a>`);
-    if (p.links?.doi) links.push(`<a class="link" href="${p.links.doi}" target="_blank" rel="noopener">DOI</a>`);
-
-    return `
-      <div class="pub-head">
-        <div class="pub-title">${title}</div>
-        <div class="pub-meta muted">${authors}</div>
-      </div>
-      <div class="pub-sub muted">
-        <span class="pill">${year}</span>
-        <span class="pill pill2">${venue}</span>
-        ${p.type ? `<span class="pill pill3">${safeText(p.type)}</span>` : ""}
-      </div>
-      ${kw ? `<div class="tag-row">${kw}</div>` : ""}
-      ${links.length ? `<div class="link-row">${links.join("")}</div>` : ""}
-    `;
-  };
-
-  const render = () => {
-    const q = (search?.value || "").trim().toLowerCase();
-    const y = (yearSelect?.value || "").trim();
-    const t = (typeSelect?.value || "").trim();
-
-    list.innerHTML = "";
-    pubs
-      .filter(p => {
-        const hay = `${p.title} ${p.venue} ${(p.authors||[]).join(" ")} ${(p.keywords||[]).join(" ")}`.toLowerCase();
-        const matchQ = !q || hay.includes(q);
-        const matchY = !y || String(p.year) === y;
-        const matchT = !t || (p.type || "") === t;
-        return matchQ && matchY && matchT;
-      })
-      .forEach(p => {
-        const li = el("li", "pub glass");
-        li.innerHTML = toHTML(p);
-        list.appendChild(li);
-      });
-  };
-
-  search?.addEventListener("input", render);
-  yearSelect?.addEventListener("change", render);
-  typeSelect?.addEventListener("change", render);
-
-  render();
+  // init
+  setActiveSeg("");
+  apply();
 }
 
 function renderMembers(members) {
@@ -626,6 +726,7 @@ main().catch((e) => {
     mainEl.prepend(err);
   }
 });
+
 
 
 
