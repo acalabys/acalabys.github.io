@@ -320,18 +320,16 @@ h3{margin:0 0 8px; font-size:18px}
   padding: 8px 2px 12px;
 }
 
-.pub-card-grid{
-  display:grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap:14px;
+.pub-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--line);
 }
 
-.pub-card{
-  background: var(--card);
-  border:1px solid var(--line);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 16px;
+.pub-item{
+  padding: 16px 8px 18px;
+  border-bottom: 1px solid var(--line);
 }
 
 .pub-title{
@@ -342,6 +340,7 @@ h3{margin:0 0 8px; font-size:18px}
 .pub-meta{
   margin-top: 6px;
   font-size: 13px;
+  color: var(--muted);
 }
 
 .pub-where{
@@ -350,67 +349,39 @@ h3{margin:0 0 8px; font-size:18px}
 }
 
 .pub-detail{
-  margin-top: 8px;
+  margin-top: 6px;
   font-size: 13px;
+  color: var(--muted);
 }
 
+/* marks + links 그대로 재사용 */
 .mark-row{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
-  margin-top: 12px;
-}
-
-/* base mark */
-.mark{
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: rgba(255,255,255,.65);
-  color: var(--text);
-  font-weight: 700;
-}
-
-/* special marks (optional tone) */
-.mark-top-tier{
-  border-color:#b7cffc;
-  background:#e8f0ff;
-  color:#1e3a8a;
-}
-.mark-scie-q1{
-  border-color:#cfe8d6;
-  background:#eaf7ee;
-  color:#14532d;
-}
-.mark-major{
-  border-color:#e6d8b7;
-  background:#fff7e6;
-  color:#7c2d12;
+  margin-top: 8px;
 }
 
 .pub-links{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .pub-link{
   display:inline-flex;
   align-items:center;
-  gap:8px;
-  padding: 8px 10px;
-  border-radius: 12px;
+  padding: 6px 10px;
+  border-radius: 10px;
   border:1px solid var(--line);
   background: var(--card-soft);
-  color: var(--blue-dark);
   font-weight: 800;
+  color: var(--blue-dark);
 }
 
 .pub-link:hover{
   text-decoration:none;
-  filter: brightness(1.02);
 }
 
 @media (max-width: 860px){
@@ -767,6 +738,7 @@ h3{margin:0 0 8px; font-size:18px}
   border:1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
 }
+
 
 
 
