@@ -1,25 +1,42 @@
 [
   {
-    "title": "Paper Title Goes Here",
-    "venue": "DAC",
     "year": 2025,
+    "region": "international",
     "type": "conference",
-    "authors": ["Author A", "Author B", "Your Lab"],
-    "keywords": ["quantization", "accelerator"],
-    "links": {
-      "pdf": "#",
-      "code": "https://github.com/"
-    }
+    "title": "MeltKV: Efficient KV Cache for LLM Inference",
+    "authors": "A. Student, B. Student, Prof. XXX",
+    "venue": "MICRO",
+    "detail": "Proceedings of the IEEE/ACM International Symposium on Microarchitecture",
+    "marks": ["top-tier", "major"],
+    "links": [
+      { "label": "PDF", "href": "assets/pubs/meltkv.pdf" },
+      { "label": "DOI", "href": "https://doi.org/xxxx" }
+    ]
   },
   {
-    "title": "Another Paper Title",
-    "venue": "arXiv",
+    "year": 2025,
+    "region": "international",
+    "type": "journal",
+    "title": "Hybrid Sparsity for On-device Task Adaptation",
+    "authors": "C. Student, Prof. XXX",
+    "venue": "IEEE TCAD",
+    "detail": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems",
+    "marks": ["scie-q1"],
+    "links": [
+      { "label": "Paper", "href": "#" }
+    ]
+  },
+  {
     "year": 2024,
-    "type": "preprint",
-    "authors": ["Author A", "Author C"],
-    "keywords": ["memory", "pim"],
-    "links": {
-      "pdf": "#"
-    }
+    "region": "domestic",
+    "type": "conference",
+    "title": "Efficient Low-Precision Training on Edge Devices",
+    "authors": "D. Student, Prof. XXX",
+    "venue": "KCC",
+    "detail": "Korea Computer Congress",
+    "marks": ["major"],
+    "links": [
+      { "label": "Slide", "href": "#" }
+    ]
   }
 ]
