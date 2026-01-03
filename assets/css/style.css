@@ -70,7 +70,38 @@ a:hover{text-decoration:underline}
   position:relative;
 }
 
-.brand{display:flex; align-items:center; gap:12px}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand-mark{
+  width:44px;              /* 로고 컨테이너 크기 */
+  height:44px;
+  border-radius:12px;
+  overflow:hidden;         /* 둥근 모서리 적용 */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;  /* 기존 파란 배경 제거 */
+  box-shadow:none;         /* 필요하면 다시 추가 가능 */
+}
+
+.brand-mark img{
+  width:100%;
+  height:100%;
+  object-fit:contain;      /* 로고 잘리지 않게 */
+  display:block;
+}
+
+.brand-name{
+  font-weight:900;
+  letter-spacing:-.2px;
+  color:white;
+}
+
+/*.brand{display:flex; align-items:center; gap:12px}
 .brand-mark{
   width:40px;
   height:40px;
@@ -89,6 +120,7 @@ a:hover{text-decoration:underline}
   letter-spacing:-.2px;
   color:white;
 }
+*/
 
 /* Nav */
 .nav-menu{
@@ -611,6 +643,7 @@ h3{margin:0 0 8px; font-size:18px}
   border:1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
 }
+
 
 
 
