@@ -3,9 +3,9 @@
     "year": 2025,
     "region": "international",
     "type": "conference",
-    "title": "MeltKV: Efficient KV Cache for LLM Inference",
+    "title": "Efficient KV Cache for LLM Inference",
     "authors": "A. Student, B. Student, Prof. XXX",
-    "venue": "MICRO",
+    "venue": "DAC",
     "detail": "Proceedings of the IEEE/ACM International Symposium on Microarchitecture",
     "marks": ["top-tier", "major"],
     "links": [
@@ -40,3 +40,4 @@
     ]
   }
 ]
+
