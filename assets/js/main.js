@@ -274,52 +274,46 @@ function renderPublications(itemsRaw) {
       h.innerHTML = `<h2>${year}</h2><div class="muted small">${pubs.length} item(s)</div>`;
       sec.appendChild(h);
 
-      const grid = document.createElement("div");
-      grid.className = "pub-card-grid";
-
+      const list = document.createElement("ul");
+      list.className = "pub-list";
+      
       pubs.forEach(p => {
-        const card = document.createElement("article");
-        card.className = "pub-card";
-
-        const top = document.createElement("div");
-        top.className = "pub-top";
-
+        const item = document.createElement("li");
+        item.className = "pub-item";
+      
         const title = document.createElement("div");
         title.className = "pub-title";
         title.textContent = p.title || "";
-
+      
         const meta = document.createElement("div");
-        meta.className = "pub-meta muted";
+        meta.className = "pub-meta";
         meta.textContent = `${p.authors || ""}`;
-
+      
         const where = document.createElement("div");
         where.className = "pub-where";
-        where.textContent = [p.venue, p.type ? `(${p.type})` : "", p.region ? `· ${p.region}` : ""]
-          .filter(Boolean).join(" ");
-
+        where.textContent = [
+          p.venue,
+          p.type ? `(${p.type})` : "",
+          p.region ? `· ${p.region}` : ""
+        ].filter(Boolean).join(" ");
+      
         const detail = document.createElement("div");
-        detail.className = "pub-detail muted";
+        detail.className = "pub-detail";
         detail.textContent = p.detail || "";
-
-        top.appendChild(title);
-        top.appendChild(meta);
-        top.appendChild(where);
-        if (p.detail) top.appendChild(detail);
-
+      
         // marks
         const marksRow = document.createElement("div");
         marksRow.className = "mark-row";
         (p.marks || []).forEach(mk => {
           const span = document.createElement("span");
           span.className = `mark mark-${mk}`;
-          span.textContent = MARK_LABEL[mk] || mk;
+          span.textContent = mk.replace("-", " ").toUpperCase();
           marksRow.appendChild(span);
         });
-
+      
         // links
         const linksRow = document.createElement("div");
         linksRow.className = "pub-links";
-
         (p.links || []).forEach(l => {
           const a = document.createElement("a");
           a.className = "pub-link";
@@ -328,15 +322,18 @@ function renderPublications(itemsRaw) {
           if (/^https?:\/\//.test(a.href)) { a.target = "_blank"; a.rel = "noopener"; }
           linksRow.appendChild(a);
         });
-
-        card.appendChild(top);
-        if (marksRow.childNodes.length) card.appendChild(marksRow);
-        if (linksRow.childNodes.length) card.appendChild(linksRow);
-
-        grid.appendChild(card);
+      
+        item.appendChild(title);
+        item.appendChild(meta);
+        item.appendChild(where);
+        if (p.detail) item.appendChild(detail);
+        if (marksRow.childNodes.length) item.appendChild(marksRow);
+        if (linksRow.childNodes.length) item.appendChild(linksRow);
+      
+        list.appendChild(item);
       });
-
-      sec.appendChild(grid);
+      
+      sec.appendChild(list);
       container.appendChild(sec);
     }
   };
@@ -726,6 +723,7 @@ main().catch((e) => {
     mainEl.prepend(err);
   }
 });
+
 
 
 
