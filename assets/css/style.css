@@ -593,6 +593,60 @@ h3{margin:0 0 8px; font-size:18px}
   }
 }
 
+/* ===== PI Profile Page ===== */
+.pi-profile{
+  display:grid;
+  grid-template-columns: 380px 1fr;
+  gap: 18px;
+  align-items:start;
+}
+
+.pi-photo img{
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: var(--card);
+  object-fit: cover;
+}
+
+.pi-body .card{
+  padding: 16px;
+}
+
+.pi-intro{
+  margin-bottom: 14px;
+}
+
+.pi-links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top: 12px;
+}
+
+.pi-sections{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.pi-list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 980px){
+  .pi-profile{
+    grid-template-columns: 1fr;
+  }
+  .pi-sections{
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Links */
 .link-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
 .link{
@@ -869,6 +923,7 @@ h3{margin:0 0 8px; font-size:18px}
   border:1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
 }
+
 
 
 
