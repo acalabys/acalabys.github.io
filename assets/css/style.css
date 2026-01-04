@@ -656,6 +656,29 @@ h3{margin:0 0 8px; font-size:18px}
   line-height: 1.65;
 }
 
+.pi-list.timeline{
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.pi-list.timeline li{
+  display: grid;
+  grid-template-columns: 140px 1fr; /* ← 기간 폭 고정 */
+  gap: 14px;
+  padding: 6px 0;
+}
+
+.pi-period{
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.pi-desc{
+  line-height: 1.6;
+}
+
 @media (max-width: 980px){
   .pi-top{
     grid-template-columns: 1fr;
@@ -941,6 +964,7 @@ h3{margin:0 0 8px; font-size:18px}
   border:1px solid rgba(255,255,255,.12);
   background: rgba(255,255,255,.06);
 }
+
 
 
 
