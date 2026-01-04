@@ -4,6 +4,7 @@
       "name": "Seungkyu Choi",
       "role": "Assistant Professor",
       "bio": "Research interests: \n\t● SoC/FPGA \n\t● AI accelerators \n\t● Memory systems.",
+      "email": "seungkc@khu.ac.kr",
       "photo": "assets/img/members/mine.jpg",
       "links": [
         { "label": "More about me", "href": "#" },
@@ -72,6 +73,7 @@
     }
   ]
 }
+
 
 
 
