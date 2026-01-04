@@ -459,7 +459,7 @@ function renderMembers(members) {
       const meta = document.createElement("div");
       meta.className = "alumni-meta muted";
       // role / bio는 줄바꿈 허용 (bio에 \n, • 등 사용 가능)
-      meta.textContent = `${m.role || ""}${m.bio ? "\n" + m.bio : ""}`;
+      meta.textContent = `${m.role || ""}${m.bio ? "\t\t -" + m.bio : ""}`;
   
       top.appendChild(name);
       top.appendChild(meta);
@@ -759,6 +759,7 @@ main().catch((e) => {
     mainEl.prepend(err);
   }
 });
+
 
 
 
