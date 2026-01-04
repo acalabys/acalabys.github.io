@@ -8,7 +8,7 @@
       "photo": "assets/img/members/mine.jpg",
       "links": [
         { "label": "More About Me", "href": "pi.html" },
-        { "label": "Google Scholar", "href": "https://scholar.google.com/citations?user=695LLAUAAAAJ&hl=ko" }
+        { "label": "Scholar", "href": "https://scholar.google.com/citations?user=695LLAUAAAAJ&hl=ko" }
       ]
     }
   ],
@@ -16,7 +16,8 @@
     {
       "name": "Seongjoon Cho",
       "role": "M.S. Candidate",
-      "bio": "● Topic: SW-HW Co-Design, RAG acceleration",
+      "bio": "● Topic: \nSW-HW Co-Design, RAG acceleration",
+      "email": "csj0725@khu.ac.kr",
       "photo": "assets/img/members/sjcho.jpg",
       "links": []
     },
@@ -24,41 +25,47 @@
       "name": "Minje Park",
       "role": "M.S. Candidate",
       "bio": "● Topic: Multimodal AI hardware, pruning/sparsity",
+      "email": "pmj990@khu.ac.kr",
       "photo": "assets/img/members/mjpark.jpg",
       "links": []
     },
     {
       "name": "Junyoung Park",
       "role": "M.S. Candidate",
-      "bio": "● Topic: AI accelerator design, RAG systems",
+      "bio": "● Topic: \nAI accelerator design, RAG systems",
+      "email": "pjy991207@khu.ac.kr",
       "photo": "assets/img/members/jypark.jpg",
       "links": []
     },
     {
       "name": "Jiyun Han",
       "role": "M.S. Candidate",
-      "bio": "● Topic: LLM acceleration, KV cache optimization",
+      "bio": "● Topic: \nLLM acceleration, KV cache optimization",
+      "email": "hjy0013@khu.ac.kr",
       "photo": "assets/img/members/jyhan.jpg",
       "links": []
     },
     {
       "name": "Yeonsik Park",
       "role": "M.S. Candidate",
-      "bio": "● Topic: LLM acceleration and quantization",
+      "bio": "● Topic: \nLLM acceleration and quantization",
+      "email": "plsik125@khu.ac.kr",
       "photo": "assets/img/members/yspark.jpg",
       "links": []
     },
     {
       "name": "Hyeonseong Kim",
       "role": "M.S. Candidate",
-      "bio": "● Topic: AI accelerator design, LLM acceleration",
+      "bio": "● Topic: \nAI accelerator design, LLM acceleration",
+      "email": "hsyoun2222@khu.ac.kr",
       "photo": "assets/img/members/hskim.jpg",
       "links": []
     },
     {
       "name": "Myeongjin Kim",
       "role": "M.S. Candidate",
-      "bio": "● Topic: LLM acceleration, SW-HW Co-design",
+      "bio": "● Topic: \nLLM acceleration, SW-HW Co-design",
+      "email": "kimj@khu.ac.kr",
       "photo": "assets/img/members/mjkim.jpg",
       "links": []
     }
@@ -73,6 +80,7 @@
     }
   ]
 }
+
 
 
 
