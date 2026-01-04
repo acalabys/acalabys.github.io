@@ -7,7 +7,7 @@
       "email": "seungkc@khu.ac.kr",
       "photo": "assets/img/members/mine.jpg",
       "links": [
-        { "label": "More about me", "href": "#" },
+        { "label": "More about me", "href": "pi.html" },
         { "label": "Scholar", "href": "#" }
       ]
     }
@@ -73,6 +73,7 @@
     }
   ]
 }
+
 
 
 
