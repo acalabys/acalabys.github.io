@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research | Digital Systems Lab</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/main.js"></script>
+</head>
+
+<body data-page="research">
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" id="brandMark">DSL</span>
+        <span class="brand-name" id="brandName">Digital Systems Lab</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+
+      <nav id="nav-menu" class="nav-menu" aria-label="주요 메뉴">
+        <a href="index.html">Home</a>
+        <a class="active" href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="members.html">Members</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <div class="page-head">
+      <h1>Research</h1>
+      <p class="muted">Our research spans full-stack AI acceleration, domain-specific hardware, and system-level optimization.</p>
+    </div>
+
+    <div class="research-sections">
+      <!-- Section 1 -->
+      <section class="card research-card">
+        <div class="section-head">
+          <h2>Key Research Direction</h2>
+        </div>
+
+        <!-- 6:4 (Left image, Right text) -->
+        <div class="split split-6-4">
+          <div class="split-media">
+            <img src="assets/img/research/key-direction.jpg" alt="Key research direction illustration" loading="lazy" decoding="async">
+          </div>
+          <div class="split-body">
+            <p class="muted">
+              (여기에 요약 설명을 넣으세요) 예: Our lab focuses on bridging algorithms, architectures,
+              and systems to deliver energy-efficient and scalable AI compute across edge-to-cloud.
+            </p>
+            <ul class="clean-list">
+              <li>Hardware–software co-design for efficient training/inference</li>
+              <li>Memory-centric acceleration (HBM/3D-stacked, PIM)</li>
+              <li>Quantization & low-precision formats for LLM/ViT</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="card research-card">
+        <div class="section-head">
+          <h2>Full-Stack Optimization for AI Acceleration</h2>
+          <a class="details-link" href="research-fullstack.html" aria-label="Full-Stack Optimization details">Details →</a>
+        </div>
+
+        <!-- Subtopic 1: left text, right image (5:5) -->
+        <div class="subtopic">
+          <div class="subtopic-head">
+            <h3>Software-to-Hardware Co-Optimization</h3>
+          </div>
+
+          <div class="split split-5-5 reverse-on-desktop">
+            <div class="split-media">
+              <img src="assets/img/research/fullstack-1.jpg" alt="Software-to-hardware co-optimization" loading="lazy" decoding="async">
+            </div>
+            <div class="split-body">
+              <p class="muted">
+                (좌 설명) 모델/컴파일러/런타임부터 마이크로아키텍처까지 병목을 찾아 end-to-end 최적화합니다.
+              </p>
+              <ul class="clean-list">
+                <li>Kernel fusion, scheduling, and operator lowering</li>
+                <li>KV-cache/memory traffic minimization</li>
+                <li>Latency/throughput/energy trade-off exploration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtopic 2: left image, right text (5:5) -->
+        <div class="subtopic">
+          <div class="subtopic-head">
+            <h3>System-Level Efficiency & Memory Hierarchy</h3>
+          </div>
+
+          <div class="split split-5-5">
+            <div class="split-media">
+              <img src="assets/img/research/fullstack-2.jpg" alt="System-level efficiency and memory hierarchy" loading="lazy" decoding="async">
+            </div>
+            <div class="split-body">
+              <p class="muted">
+                (우 설명) DRAM/HBM/SSD 계층에서 데이터 이동을 줄이고, 토큰 지연과 비용을 낮추는 시스템 설계를 연구합니다.
+              </p>
+              <ul class="clean-list">
+                <li>Bandwidth-aware caching & prefetching</li>
+                <li>Near-data processing & memory pooling</li>
+                <li>Profiling-driven optimization</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="card research-card">
+        <div class="section-head">
+          <h2>Domain-Specific Accelerator Design</h2>
+          <a class="details-link" href="research-domain.html" aria-label="Domain-Specific Accelerator details">Details →</a>
+        </div>
+
+        <!-- Subtopic 1: left text, right image (5:5) -->
+        <div class="subtopic">
+          <div class="subtopic-head">
+            <h3>LLM/Transformer Acceleration</h3>
+          </div>
+
+          <div class="split split-5-5 reverse-on-desktop">
+            <div class="split-media">
+              <img src="assets/img/research/domain-1.jpg" alt="LLM/Transformer acceleration" loading="lazy" decoding="async">
+            </div>
+            <div class="split-body">
+              <p class="muted">
+                (좌 설명) Attention, KV-cache, low-precision compute 등 Transformer 특화 병목을 겨냥한 가속기 설계를 수행합니다.
+              </p>
+              <ul class="clean-list">
+                <li>KV-cache compression / paging</li>
+                <li>INT4/INT8 mixed precision pipelines</li>
+                <li>Throughput-oriented datapaths</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subtopic 2: left image, right text (5:5) -->
+        <div class="subtopic">
+          <div class="subtopic-head">
+            <h3>Vision & Edge AI Accelerators</h3>
+          </div>
+
+          <div class="split split-5-5">
+            <div class="split-media">
+              <img src="assets/img/research/domain-2.jpg" alt="Vision and edge AI accelerators" loading="lazy" decoding="async">
+            </div>
+            <div class="split-body">
+              <p class="muted">
+                (우 설명) 전력/면적 제약이 큰 edge 환경에서 높은 효율을 내는 비전·센서 기반 AI 가속기를 설계합니다.
+              </p>
+              <ul class="clean-list">
+                <li>Streaming-friendly architectures</li>
+                <li>On-device adaptation & training</li>
+                <li>HW/SW co-design for real-time constraints</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="muted small">© <span id="year"></span> <span id="footerOrg"></span></div>
+      <div class="footer-links" id="footerLinks"></div>
+    </div>
+  </footer>
+</body>
+</html>
