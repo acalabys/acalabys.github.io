@@ -24,7 +24,7 @@
     {
       "name": "Minje Park",
       "role": "M.S. Candidate",
-      "bio": "● Topic: Multimodal AI hardware, pruning/sparsity",
+      "bio": "● Topic: \nMultimodal AI hardware, pruning/sparsity",
       "email": "pmj990@khu.ac.kr",
       "photo": "assets/img/members/mjpark.jpg",
       "links": []
@@ -80,6 +80,7 @@
     }
   ]
 }
+
 
 
 
