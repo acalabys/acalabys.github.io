@@ -426,8 +426,6 @@ function renderMembers(members) {
     if (m.bio) {
       const bioLine = document.createElement("p");
       bioLine.className = "muted member-bio";
-      const bioText = String(m.bio)
-        .replace(/^\s*-\s+/gm, "•");
       bioLine.textContent = m.bio;     // \n / • / 공백 들여쓰기 그대로
       body.appendChild(bioLine);
     }
@@ -791,6 +789,7 @@ main().catch((e) => {
     mainEl.prepend(err);
   }
 });
+
 
 
 
