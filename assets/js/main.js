@@ -213,9 +213,10 @@ function renderPublications(itemsRaw) {
   const MARK_LABEL = {
     "top-tier": "Top-tier",
     "major": "Major",
+    "cs": "CS Outstanding",
     "scie-q1": "SCIE Q1",
     "scie": "SCIE",
-    "best-paper": "Best Paper",
+    "best-paper-award": "Best Paper Award",
     "oral": "Oral"
   };
 
@@ -789,6 +790,7 @@ main().catch((e) => {
     mainEl.prepend(err);
   }
 });
+
 
 
 
