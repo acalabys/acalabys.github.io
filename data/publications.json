@@ -33,7 +33,7 @@
     "authors": "Jongwoo Park, Hyeonsung Kim, Jiyun Han, and Seungkyu Choi",
     "venue": "DAC",
     "detail": "In Proceedings of the ACM/IEE Design Automation Conference (DAC)",
-    "marks": ["top-tier"],
+    "marks": ["top-tier", "cs"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/DAC63849.2025.11133184" }
     ]
@@ -69,10 +69,10 @@
     "region": "international",
     "type": "conference",
     "title": "ParaBase: A Configurable Parallel Baseband Processor for Ultra-High-Speed Inter-Satellite Optical Communications",
-    "authors": "Hyeonwook Wi, Hyeonuk Kim, Seungkyu Choi, and Lee-Sup Kim",
+    "authors": "Seungkyu Choi, Huanshihong Deng, Kuan-Yu Chen, Yufan Yue, David Blaauw, and Hun-Seok Kim",
     "venue": "ISLPED",
     "detail": "In Proceedings of the IEEE/ACM International Symposium on Low Power Electronics and Design (ISLPED)",
-    "marks": ["major"],
+    "marks": ["major", "cs"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1145/3665314.3673174" }
     ]
@@ -85,7 +85,7 @@
     "authors": "Nguyen-Dong Ho, Gyujun Jeong, Cheol-Min Kang, Seungkyu Choi, and Ik-Joon Chang",
     "venue": "DAC",
     "detail": "In Proceedings of the ACM/IEE Design Automation Conference (DAC)",
-    "marks": ["top-tier"],
+    "marks": ["top-tier", "cs"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1145/3649329.3655907" }
     ]
@@ -137,7 +137,7 @@
     "authors": "Jaekang Shin, Seungkyu Choi, Jongwoo Ra, and Lee-Sup Kim",
     "venue": "DAC",
     "detail": "In Proceedings of the ACM/IEE Design Automation Conference (DAC)",
-    "marks": ["top-tier"],
+    "marks": ["top-tier", "cs"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1145/3489517.3530455" }
     ]
@@ -176,7 +176,7 @@
     "authors": "Seungkyu Choi, Jaekang Shin, and Lee-Sup Kim",
     "venue": "ICCAD",
     "detail": "In Proceedings of the IEEE/ACM International Conference on Computer-Aided Design (ICCAD)",
-    "marks": ["top-tier", "major"],
+    "marks": ["top-tier", "cs"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/ICCAD51958.2021.9643522" }
     ]
@@ -202,7 +202,7 @@
     "authors": "Jaekang Shin, Seungkyu Choi, Yeongjae Choi, and Lee-Sup Kim",
     "venue": "DAC",
     "detail": "In Proceedings of the ACM/IEE Design Automation Conference (DAC)",
-    "marks": ["top-tier"],
+    "marks": ["top-tier", "cs"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/DAC18072.2020.9218507" }
     ]
@@ -228,7 +228,7 @@
     "authors": "Hyeonwook Wi, Hyeonuk Kim, Seungkyu Choi, and Lee-Sup Kim",
     "venue": "ISLPED",
     "detail": "In Proceedings of the IEEE/ACM International Symposium on Low Power Electronics and Design (ISLPED)",
-    "marks": ["major"],
+    "marks": ["major", "cs"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/ISLPED.2019.8824855" }
     ]
@@ -241,7 +241,7 @@
     "authors": "Seungkyu Choi, Jaekang Shin, Yeongjae Choi, and Lee-Sup Kim",
     "venue": "DAC",
     "detail": "In Proceedings of the ACM/IEE Design Automation Conference (DAC)",
-    "marks": ["top-tier"],
+    "marks": ["top-tier", "cs"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1145/3316781.3317769" }
     ]
@@ -254,7 +254,7 @@
     "authors": "Seungkyu Choi, Jaehyeong Sim, Myeonggu Kang, and Lee-Sup Kim",
     "venue": "ISLPED",
     "detail": "In Proceedings of the IEEE/ACM International Symposium on Low Power Electronics and Design (ISLPED)",
-    "marks": ["major"],
+    "marks": ["major", "cs"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1145/3218603.3218625" }
     ]
@@ -280,52 +280,13 @@
     "authors": "Myung-Hoon Choi, Seungkyu Choi, Jaehyeong Sim, and Lee-Sup Kim",
     "venue": "ISLPED",
     "detail": "In Proceedings of the IEEE/ACM International Symposium on Low Power Electronics and Design (ISLPED)",
-    "marks": ["major"],
+    "marks": ["major", "cs"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/ISLPED.2017.8009174" }
     ]
-  },
-  {
-    "year": 2025,
-    "region": "international",
-    "type": "conference",
-    "title": "Efficient KV Cache for LLM Inference",
-    "authors": "A. Student, B. Student, Prof. XXX",
-    "venue": "DAC",
-    "detail": "In Proceedings of the ACM/IEE Design Automation Conference (DAC)",
-    "marks": ["top-tier", "major"],
-    "links": [
-      { "label": "PDF", "href": "assets/pubs/meltkv.pdf" },
-      { "label": "DOI", "href": "https://doi.org/xxxx" }
-    ]
-  },
-  {
-    "year": 2025,
-    "region": "international",
-    "type": "journal",
-    "title": "Hybrid Sparsity for On-device Task Adaptation",
-    "authors": "C. Student, Prof. XXX",
-    "venue": "IEEE TCAD",
-    "detail": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems",
-    "marks": ["scie"],
-    "links": [
-      { "label": "Paper", "href": "#" }
-    ]
-  },
-  {
-    "year": 2024,
-    "region": "domestic",
-    "type": "conference",
-    "title": "Efficient Low-Precision Training on Edge Devices",
-    "authors": "D. Student, Prof. XXX",
-    "venue": "KCC",
-    "detail": "Korea Computer Congress",
-    "marks": ["major"],
-    "links": [
-      { "label": "Slide", "href": "#" }
-    ]
   }
 ]
+
 
 
 
