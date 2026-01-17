@@ -1,6 +1,6 @@
 [
   {
-    "year": 2025,
+    "year": 2026,
     "region": "international",
     "type": "journal",
     "title": "Q-VESA: Accelerating Quantization-Aware Vector Search for Fast Retrieval in Prompt Engineering",
@@ -98,7 +98,7 @@
     "authors": "Pierre Abillama, Zichen Fan, Yu Chen, Hyochan An, Qirui Zhang, Seungkyu Choi, David Blaauw, Dennis Sylvester, and Hun-Seok Kim",
     "venue": "ASAP",
     "detail": "IEEE International Conference on Application-specific Systems, Architectures, and Processors (ASAP)",
-    "marks": ["Best Paper Award", "Major"],
+    "marks": ["Best-Paper-Award", "major"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1145/3489517.3530455" }
     ]
@@ -326,6 +326,7 @@
     ]
   }
 ]
+
 
 
 
