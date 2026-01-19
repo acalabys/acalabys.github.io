@@ -1072,6 +1072,7 @@ h3{margin:0 0 8px; font-size:18px}
   object-fit: contain;
   border: none !important;
   background: transparent; /* 필요하면 #fff */
+  margin: 0 auto;
 }
 
 .split-5-5 .split-media img{
@@ -1139,6 +1140,7 @@ h3{margin:0 0 8px; font-size:18px}
     min-height: 200px;
   }
 }
+
 
 
 
