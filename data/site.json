@@ -4,7 +4,7 @@
     "name": "Algorithm, Circuits, Architecture Lab",
     "org": "Yonsei University / School of Electrical and Electronic Engineering",
     "kicker": "Next-gen Digital Systems & SW-HW Co-Design",
-    "lead": "We build efficient digital systems — from SoC/FPGA to AI accelerators and memory-centric architectures.",
+    "lead": "We build efficient digital systems — from AI algorithm to hardware accelerators and memory-centric computing platforms.",
     "keywords": [ "AI Accelerator", "Software-Hardware Co-Design", "Hardware-Efficient AI Algroithm", "SoC and Processing-in-Memory"],
     "heroBadge": "Now recruiting",
     "heroNote": "Edit numbers/contents in JSON — pages update automatically."
@@ -43,6 +43,7 @@
     { "label": "GitHub", "href": "https://github.com/" }
   ]
 }
+
 
 
 
