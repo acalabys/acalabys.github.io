@@ -3,7 +3,7 @@
     "shortName": "ACA",
     "name": "Algorithm, Circuits, Architecture Lab",
     "org": "Yonsei University / School of Electrical and Electronic Engineering",
-    "kicker": "Next-gen Hardware & Systems",
+    "kicker": "Next-gen Digital Systems & SW-HW Co-Design",
     "lead": "We build efficient digital systems — from SoC/FPGA to AI accelerators and memory-centric architectures.",
     "keywords": [ "AI Accelerator", "Software-Hardware Co-Design", "Hardware-Efficient AI Algroithm", "SoC and Processing-in-Memory"],
     "heroBadge": "Now recruiting",
@@ -43,5 +43,6 @@
     { "label": "GitHub", "href": "https://github.com/" }
   ]
 }
+
 
 
