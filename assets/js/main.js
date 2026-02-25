@@ -37,7 +37,7 @@ function applySiteBranding(site) {
   const mark = document.getElementById("brandMark");
   const name = document.getElementById("brandName");
   if (mark) mark.textContent = site.lab.shortName || "ACA";
-  if (name) name.textContent = site.lab.name || "Algorithm, Circuits, Architecture Lab";
+  if (name) name.textContent = site.lab.name || "Algorithm, Circuits, Architecture";
 
   const footerOrg = document.getElementById("footerOrg");
   const footerLabName = document.getElementById("footerLabName");
@@ -790,6 +790,7 @@ main().catch((e) => {
     mainEl.prepend(err);
   }
 });
+
 
 
 
