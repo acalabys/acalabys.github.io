@@ -1,11 +1,11 @@
 {
   "lab": {
-    "shortName": "DSL",
-    "name": "Digital Systems Lab",
-    "org": "Your University / Department",
+    "shortName": "ACA",
+    "name": "Algorithm, Circuits, Architecture Lab",
+    "org": "Yonsei University / School of Electrical and Electronic Engineering",
     "kicker": "Next-gen Hardware & Systems",
     "lead": "We build efficient digital systems — from SoC/FPGA to AI accelerators and memory-centric architectures.",
-    "keywords": ["SoC / FPGA", "AI Accelerator", "Memory System", "Low Precision"],
+    "keywords": [ "AI Accelerator", "Software-Hardware Co-Design", "Hardware-Efficient AI Algroithm", "SoC and Processing-in-Memory"],
     "heroBadge": "Now recruiting",
     "heroNote": "Edit numbers/contents in JSON — pages update automatically."
   },
@@ -26,8 +26,8 @@
     ]
   },
   "contact": {
-    "addressLines": ["Building, Room", "Street Address", "City, Country"],
-    "email": "lab@example.com",
+    "addressLines": ["Engineering Hall #3 - C229", "50 Yonsei-ro, Seodaemun-gu", "Seoul, South Korea"],
+    "email": "seungkc@yonsei.ac.kr",
     "links": [
       { "label": "GitHub", "href": "https://github.com/" },
       { "label": "Google Scholar", "href": "#" }
@@ -36,11 +36,12 @@
   "recruiting": {
     "title": "Join Us",
     "body": "We welcome motivated students (MS/PhD/UG). Please email your CV and a brief statement of interest.",
-    "items": ["Areas: SoC/FPGA, AI accelerators, memory systems", "Include: CV, transcript (optional), portfolio (optional)"]
+    "items": ["Areas: SoC/FPGA, AI accelerators, Software-hardware co-design", "Include: CV, transcript (optional), portfolio (optional)"]
   },
   "footerLinks": [
     { "label": "Contact", "href": "contact.html" },
     { "label": "GitHub", "href": "https://github.com/" }
   ]
 }
+
 
