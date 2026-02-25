@@ -2,6 +2,32 @@
   {
     "year": 2026,
     "region": "international",
+    "type": "conference",
+    "title": "OHA: A Latency-Optimized CPU-Storage Hybrid Architecture for Billion-Scale Graph-based Vector Similarity Search",
+    "authors": "Seongjoon Cho, Junyoung Park, Donghyun Kang, Moohyeon Nam, Hongchan Roh, Se-Hyun Yang, Moo-Kyoung Chung and Seungkyu Choi",
+    "venue": "DAC",
+    "detail": "In Proceedings of the ACM/IEE Design Automation Conference (DAC)",
+    "marks": ["top-tier", "cs"],
+    "links": [
+      { "label": "DOI", "href": "https://doi.org/xxx" }
+    ]
+  },
+  {
+    "year": 2026,
+    "region": "international",
+    "type": "conference",
+    "title": "SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization",
+    "authors": "Yeonsik Park, Hyeonseong Kim, Jiyun Han, and Seungkyu Choi",
+    "venue": "DAC",
+    "detail": "In Proceedings of the International Conference on Learning Representations (ICLR)",
+    "marks": ["top-tier", "cs"],
+    "links": [
+      { "label": "DOI", "href": "https://doi.org/xxx" }
+    ]
+  },
+  {
+    "year": 2026,
+    "region": "international",
     "type": "journal",
     "title": "Q-VESA: Accelerating Quantization-Aware Vector Search for Fast Retrieval in Prompt Engineering",
     "authors": "Seongjoon Cho, Junyoung Park, Donghyun Kang, Moohyeon Nam, Hongchan Roh, Moo-Kyoung Chung, Se-Hyun Yang, and Seungkyu Choi",
@@ -286,6 +312,7 @@
     ]
   }
 ]
+
 
 
 
