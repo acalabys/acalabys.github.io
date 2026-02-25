@@ -66,7 +66,7 @@ function renderHero(site) {
   const note = document.getElementById("heroNote");
 
   if (kicker) kicker.textContent = lab.kicker || "";
-  //if (title) title.textContent = lab.name || "";
+  if (title) title.textContent = lab.name || "";
   if (lead) lead.textContent = lab.lead || "";
   if (badge) badge.textContent = lab.heroBadge || "Highlights";
   if (note) note.textContent = lab.heroNote || "";
@@ -790,6 +790,7 @@ main().catch((e) => {
     mainEl.prepend(err);
   }
 });
+
 
 
 
