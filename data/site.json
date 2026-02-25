@@ -1,7 +1,7 @@
 {
   "lab": {
     "shortName": "ACA",
-    "name": "Algorithm, Circuits, Architecture Lab",
+    "name": "Algorithm, Circuits, Architecture",
     "org": "Yonsei University / School of Electrical and Electronic Engineering",
     "kicker": "Next-gen Digital Systems & SW-HW Co-Design",
     "lead": "We build efficient digital systems — from AI algorithm to hardware accelerators and memory-centric computing platforms.",
@@ -43,6 +43,7 @@
     { "label": "GitHub", "href": "https://github.com/" }
   ]
 }
+
 
 
 
