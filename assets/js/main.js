@@ -246,13 +246,27 @@ function renderPublications(itemsRaw) {
     });
 
     // group by year desc
-    const byYear = new Map();
-    filtered
-      .sort((a, b) => (b.year - a.year) || (String(a.title).localeCompare(String(b.title))))
-      .forEach(p => {
-        if (!byYear.has(p.year)) byYear.set(p.year, []);
-        byYear.get(p.year).push(p);
-      });
+    //const byYear = new Map();
+    //filtered
+    //  .sort((a, b) => (b.year - a.year) || (String(a.title).localeCompare(String(b.title))))
+    //  .forEach(p => {
+    //    if (!byYear.has(p.year)) byYear.set(p.year, []);
+    //    byYear.get(p.year).push(p);
+    //  });
+    const indexed = filtered.map((p, i) => ({ p, i }));
+
+    indexed.sort((a, b) => {
+      // 1) year 내림차순
+      if (b.p.year !== a.p.year) return b.p.year - a.p.year;
+    
+      // 2) date 내림차순(있는 것 우선)
+      const bt = b.p._time ?? -Infinity;
+      const at = a.p._time ?? -Infinity;
+      if (bt !== at) return bt - at;
+    
+      // 3) date가 같거나 없으면 JSON 순서 유지
+      return a.i - b.i;
+      
 
     container.innerHTML = "";
 
@@ -788,6 +802,7 @@ main().catch((e) => {
     mainEl.prepend(err);
   }
 });
+
 
 
 
