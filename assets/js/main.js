@@ -193,11 +193,13 @@ function renderResearch(research) {
 
 function normalizePub(p) {
   const year = Number(p.year) || 0;
+  const dateStr = (p.date || "").trim();
+  const time = dateStr ? Date.parse(dateStr.length === 7 ? `${dateStr}-01` : dateStr) : NaN;
   const region = (p.region || "").toLowerCase();
   const type = (p.type || "").toLowerCase();
   const marks = Array.isArray(p.marks) ? p.marks.map(x => String(x).toLowerCase()) : [];
   const links = Array.isArray(p.links) ? p.links : [];
-  return { ...p, year, region, type, marks, links };
+  return { ...p, year, _time: Number.isFinite(time) ? time : null};
 }
 
 function renderPublications(itemsRaw) {
@@ -790,6 +792,7 @@ main().catch((e) => {
     mainEl.prepend(err);
   }
 });
+
 
 
 
