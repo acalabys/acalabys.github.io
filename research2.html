@@ -30,24 +30,125 @@
   <main class="container page">
     <div class="page-head">
       <h1>Domain-Specific Accelerator Design</h1>
-      <p class="muted">Details page. Add your accelerator families and design philosophy here.</p>
     </div>
 
     <section class="card">
-      <div class="card-title">Overview</div>
-      <p class="muted">
-        (여기에 상세 내용 작성) Transformer/vision/edge workloads, dataflow, precision formats, and memory-centric designs.
-      </p>
+      <!-- Section 1: A dataflow architecture design (AI Processor) -->
+      <div class="subtopic-head left-text">
+        <h3>A Dataflow Architecture Design (AI Processor)</h3>
+      </div>
+      <!-- left text, right img (5:5) -->
+      <div class="split split-5-5 reverse-on-desktop">
+        <div class="split-body left-text">
+          <ul class="clean-list">
+            <li>
+              <strong>Summary:</strong> <br/>
+              - A scalable deep-learning accelerator supporting the training process is implemented for device personalization of deep convolutional neural networks (CNNs). It consists of three processor cores operating with distinct energy-efficient dataflow for different types of computation in CNN training. A disparate dataflow architecture is implemented for the weight gradient computation to enhance PE utilization while maximally reuse the input data.
+            </li>
+
+            <li>
+              <strong>Reference:</strong> <br/>
+              <span class="ref-paper">- Seungkyu Choi, Jaehyeong Sim, Myeonggu Kang, Yeongjae Choi, Hyeonuk Kim, and Lee-Sup Kim, "An Energy-Efficient Deep Convolutional Neural Network Training Accelerator for In Situ Personalization on Smart Devices," IEEE Journal of Solid-State Circuits, Oct. 2020.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="split-media no-border research-detail-img">
+          <img src="assets/img/research_2/dataflow_accelerator.png" alt="A Dataflow Architecture Design (AI Processor)" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Mixed-precision Processing units -->
+    <div class="subtopic">
+      <div class="subtopic-head left-text">
+        <h3>Mixed-precision Processing units</h3>
+      </div>
+      <!-- left text, right img (5:5) -->
+      <div class="split split-5-5 reverse-on-desktop">
+        <div class="split-body left-text">
+          <ul class="clean-list">
+            <li>
+              <strong>Summary:</strong> <br/>
+              From two perspectives: 1) separate precision decision for each input data, 2) maintenance of high performance on inference, we configure the data with low-bit fixed-point of activation/weight and floating-point based error gradient securing up to half-precision. A novel MAC architecture is designed to compute low- and high-precision modes for the different input combinations. By substituting a high-cost floating-point based addition to brick-level separate accumulations, we realize both area-efficient architecture and high throughput for low-precision computation.
+            </li>
+
+            <li>
+              <strong>Reference:</strong> <br/>
+              <span class="ref-paper">- Seungkyu Choi, Jaekang Shin, and Lee-Sup Kim, "A Deep Neural Network Training Architecture with Inference-aware Heterogeneous Data-type," IEEE Transactions on Computers, May 2022.</span> <br/>
+              <span class="ref-paper">- Jongwoo Park, Hyeonsung Kim, Jiyun Han, and Seungkyu Choi, "A Mixed-Precision Architecture for Efficient DNN Training with Inference-aware Data-type," ACM/IEEE Design Automation Conference (DAC), 2025.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="split-media no-border research-detail-img">
+          <img src="assets/img/research_2/A_convergence_.png" alt="A dedicated hardware design for various domains" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: sparsity-aware PE architecture -->
+    <div class="subtopic">
+      <div class="subtopic-head left-text">
+        <h3>Sparsity-aware PE architecture</h3>
+      </div>
+      <!-- left text, right img (5:5) -->
+      <div class="split split-5-5 reverse-on-desktop">
+        <div class="split-body left-text">
+          <ul class="clean-list">
+            <li>
+              <strong>Summary:</strong> <br/>
+              - Multi-window dataflow architecture for selective weight update <br/>
+            - Redundancy Censoring Unit (RCU)-based PE architecture
+            </li>
+
+            <li>
+              <strong>Reference:</strong> <br/>
+              <span class="ref-paper">- Jaekang Shin, Seungkyu Choi, Yeongjae Choi, and Lee-Sup Kim, "A Pragmatic Approach to On-device Incremental Learning System with Selective Weight Updates," ACM/IEEE Design Automation Conference (DAC), 2020.</span> <br/>
+              <span class="ref-paper">- Kangkyu Park, Seungkyu Choi, Yeongjae Choi, and Lee-Sup Kim, "Rare Computing: Removing Redundant Multiplications from Sparse and Repetitive Data in Deep Neural Networks," IEEE Transactions on Computers, Apr. 2022.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="split-media no-border">
+          <img src="assets/img/research_2/A_convergence_.png" alt="A dedicated hardware design for various domains" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: Hardware-Efficient Data Formats -->
+    <div class="subtopic">
+      <div class="subtopic-head left-text">
+        <h3>Hardware-Efficient Data Formats</h3>
+      </div>
+      <!-- left text, right img (5:5) -->
+      <div class="split split-5-5 reverse-on-desktop">
+        <div class="split-body left-text">
+          <ul class="clean-list">
+            <li>
+              <strong>Summary:</strong> <br/>
+              - a novel 8-bit PTQ data format designed for various DNNs <br/>
+              - Leveraging the dynamic configuration of exponent and fraction bits derived from Posit data format, but demonstrates enhanced decoding efficiency
+            </li>
+
+            <li>
+              <strong>Reference:</strong> <br/>
+              <span class="ref-paper">- Nguyen-Dong Ho, Gyujun Jeong, Cheol-Min Kang, Seungkyu Choi, and Ik-Joon Chang, "MERSIT: A Hardware-Efficient 8-bit Data Format with Enhanced Post-Training Quantization DNN Accuracy" ACM/IEEE Design Automation Conference (DAC), 2024.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="split-media no-border">
+          <img src="assets/img/research_2/A_convergence_.png" alt="A dedicated hardware design for various domains" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
     </section>
 
-    <section class="card">
+    <!-- <section class="card">
       <div class="card-title">Representative Topics</div>
       <ul class="clean-list">
         <li>Transformer attention & KV-cache acceleration</li>
         <li>Low-precision compute pipelines (INT4/INT8)</li>
         <li>Edge-friendly accelerators and on-device adaptation</li>
       </ul>
-    </section>
+    </section> -->
 
     <div style="margin-top:14px;">
       <a class="pub-link" href="research.html">← Back to Research</a>

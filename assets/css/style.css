@@ -1132,6 +1132,18 @@ h3{margin:0 0 8px; font-size:18px}
   filter: brightness(1.02);
 }
 
+.research-detail-img {
+  width: 100%;
+  max-width: 860px; /* 전체 컨테이너 폭에 맞추어 최대 크기 제한 */
+  margin: 0 auto;
+}
+
+.research-detail-img img {
+  width: 100%;
+  height: auto !important; /* 비율 유지 */
+  object-fit: contain;     /* 잘림 방지 */
+}
+
 /* shared split */
 .split{
   display:grid;
@@ -1227,7 +1239,11 @@ h3{margin:0 0 8px; font-size:18px}
   letter-spacing: -0.2px;
 }
 
-/* clean list */
+.ref-paper {
+  font-style: italic; /* 기울임꼴 */
+  font-size: 14px;    /* 크기 약간 축소 (기본 15~16px 대비) */
+  color: var(--muted);/* 흐린 색상 유지 */
+}
 .clean-list{
   margin: 10px 0 0;
   padding-left: 18px;

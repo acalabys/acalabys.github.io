@@ -30,24 +30,95 @@
   <main class="container page">
     <div class="page-head">
       <h1>Full-Stack Optimization for AI Acceleration</h1>
-      <p class="muted">Details page. Add projects, diagrams, and key results here.</p>
+    </div>
+    <section class="card">
+      <!-- Section 1: AI System design with hardware-friendly algorithm -->
+      <div class="subtopic-head left-text">
+        <h3>AI System Design With Hardware-Friendly Algorithm</h3>
+      </div>
+      <!-- left text, right img (5:5) -->
+      <div class="split split-5-5 reverse-on-desktop">
+        <div class="split-body left-text">
+          <ul class="clean-list">
+            <li>
+              <strong>Summary:</strong> <br/>
+              - Low-bit AI Framework for on-device personalization & quantized MAC operating system design <br/>
+              - A low-cost convergence monitoring system for computation skip in DNN training
+            </li>
+
+            <li class="reference-item">
+              <strong>Reference:</strong> <br/>
+              <span class="ref-paper">- Seungkyu Choi, Jaekang Shin, Yeongjae Choi, and Lee-Sup Kim, "An Optimized Design Technique of Low-bit Neural Network Training for Personalization on IoT Devices," ACM/IEEE Design Automation Conference (DAC), 2019.</span> <br/>
+              <span class="ref-paper">- Seungkyu Choi, Jaekang Shin, and Lee-Sup Kim, "A Convergence Monitoring Method for DNN Training of On-device Task Adaptation," IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2021.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="split-media no-border research-detail-img shadow-img">
+          <img src="assets/img/research_1/ai_system_design.png" alt="AI System design with hardware-friendly algorithm" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <!-- Section 2: Representative Topics -->
+      <div class="subtopic">
+      <div class="subtopic-head left-text">
+        <h3>Algorithm-Hardware Co-Design for Efficient DNN Processing</h3>
+      </div>
+      <!-- left text, right img (5:5) -->
+      <div class="split split-5-5 reverse-on-desktop">
+        <div class="split-body left-text">
+          <ul class="clean-list">
+            <li>
+              <strong>Summary:</strong> <br/>
+              - The proposed algorithmic scheme for multi-task DNN reduces per-task weight and activation size by sharing those data between tasks. We design architecture and dataflow to minimize DRAM access by fully utilizing the benefits
+            </li>
+
+            <li>
+              <strong>Reference:</strong> <br/>
+              <span class="ref-paper">- Jaekang Shin, Seungkyu Choi, Jongwoo Ra, and Lee-Sup Kim, "Algorithm/Architecture Co-Design for Energy-Efficient Acceleration of Multi-Task DNN," ACM/IEEE Design Automation Conference (DAC), 2022.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="split-media no-border research-detail-img">
+          <img src="assets/img/research_1/algorithm_hardware_co_design.png" alt="AI System design with hardware-friendly algorithm" loading="lazy" decoding="async">
+        </div>
+      </div>
     </div>
 
-    <section class="card">
-      <div class="card-title">Overview</div>
-      <p class="muted">
-        (여기에 상세 내용을 작성) Compiler/runtime + architecture + system optimization.
-      </p>
+    <!-- Section 3: Efficient Algorithm for Deep Learning Models -->
+    <div class="subtopic">
+      <div class="subtopic-head left-text">
+        <h3>Efficient Algorithm for Deep Learning Models</h3>
+      </div>
+      <!-- left text, right img (5:5) -->
+      <div class="split split-5-5 reverse-on-desktop">
+        <div class="split-body left-text">
+          <ul class="clean-list">
+            <li>
+              <strong>Summary:</strong> <br/>
+              - We are focusing on hardware-efficient algorithms for large foundation models by leveraging various model compression techniques. We provide optimal, lightweight solutions for target hardware by directly optimizing the trade-offs among storage, computation, and accuracy.
+            </li>
+
+            <li>
+              <strong>Reference:</strong> <br/>
+              <span class="ref-paper">- Yeonsik Park, Hyeonseong Kim, Jiyun Han, and Seungkyu Choi, "SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization," International Conference on Learning Representations (ICLR), 2026.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="split-media no-border research-detail-img">
+          <img src="assets/img/research_1/serq.png" alt="Efficient Algorithm for Deep Learning Models" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
     </section>
 
-    <section class="card">
+    <!-- <section class="card">
       <div class="card-title">Representative Topics</div>
       <ul class="clean-list">
         <li>Compiler lowering and kernel fusion</li>
         <li>Memory hierarchy and KV-cache efficiency</li>
         <li>Profiling tools and system integration</li>
       </ul>
-    </section>
+    </section> -->
 
     <div style="margin-top:14px;">
       <a class="pub-link" href="research.html">← Back to Research</a>
