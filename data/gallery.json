@@ -1,18 +1,50 @@
 [
   {
-    "src": "assets/img/gallery/seminar-2025-11.jpg",
-    "thumb": "assets/img/gallery/seminar-2025-11.jpg",
-    "title": "Weekly Seminar",
-    "desc": "We discussed low-precision formats and memory bottlenecks.",
-    "date": "2025-11",
-    "tags": ["Seminar", "Research"]
+    "src": "assets/img/gallery/260224_futsal.jpg",
+    "thumb": "assets/img/gallery/260224_futsal.jpg",
+    "title": "2026 풋살",
+    "desc": "",
+    "date": "2026-02-24",
+    "tags": []
   },
   {
-    "src": "assets/img/gallery/group-2025.jpg",
-    "thumb": "assets/img/gallery/group-2025.jpg",
-    "title": "Group Photo",
-    "desc": "End-of-year group photo.",
-    "date": "2025-12",
-    "tags": ["People", "Event"]
+    "src": "assets/img/gallery/260127_new_year_party.jpg",
+    "thumb": "assets/img/gallery/260127_new_year_party.jpg",
+    "title": "2026 신년회",
+    "desc": "",
+    "date": "2026-01-27",
+    "tags": []
+  },
+  {
+    "src": "assets/img/gallery/251219_year_end_party.jpg",
+    "thumb": "assets/img/gallery/251219_year_end_party.jpg",
+    "title": "2025 송년회",
+    "desc": "",
+    "date": "2025-12-19",
+    "tags": []
+  },
+  {
+    "src": "assets/img/gallery/250821_workshop.jpg",
+    "thumb": "assets/img/gallery/250821_workshop.jpg",
+    "title": "2025 Workshop",
+    "desc": "",
+    "date": "2025-08-21",
+    "tags": []
+  },
+  {
+    "src": "assets/img/gallery/2025_DAC.jpg",
+    "thumb": "assets/img/gallery/2025_DAC.jpg",
+    "title": "2025 DAC",
+    "desc": "",
+    "date": "2025",
+    "tags": []
+  },
+  {
+    "src": "assets/img/gallery/250411_spring_picnic.jpg",
+    "thumb": "assets/img/gallery/250411_spring_picnic.jpg",
+    "title": "2025 야유회",
+    "desc": "",
+    "date": "2025-04-11",
+    "tags": []
   }
 ]

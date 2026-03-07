@@ -770,7 +770,7 @@ h3{margin:0 0 8px; font-size:18px}
 .gallery-grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  gap:14px;
+  gap:24px;
 }
 
 .gallery-item{
@@ -1009,7 +1009,7 @@ h3{margin:0 0 8px; font-size:18px}
 
 .research-overview {
   margin-bottom: 8px;
-  padding: 12px 8px 32px;
+  padding: 0px 8px 32px; /* reduced top padding from 12px to 0px */
   border-bottom: 2px dashed var(--line);
   display: flex;
   flex-direction: column;
