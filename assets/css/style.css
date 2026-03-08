@@ -794,6 +794,95 @@ h3{margin:0 0 8px; font-size:18px}
   background: var(--card-soft);
 }
 
+.gallery-media {
+  position: relative;
+  width: 100%;
+  height: 220px; /* 고정 높이 */
+  overflow: hidden;
+  background: var(--card-soft);
+}
+
+.gallery-mini-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-mini-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE */
+}
+.gallery-mini-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.gallery-mini-track .gallery-thumb {
+  flex: 0 0 100%; /* 부모 너비의 정확히 100%만 차지하게 강제 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  scroll-snap-align: start;
+}
+
+.mini-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5); /* 더 진한 검은색 반투명 */
+  color: #fff;
+  border: none;
+  width: 40px; /* 크기 키움 */
+  height: 40px; /* 크기 키움 */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px; /* 화살표 크기 키움 */
+  font-weight: bold;
+  opacity: 0;
+  transition: all 0.2s ease;
+  z-index: 2;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+.gallery-mini-slider:hover .mini-nav {
+  opacity: 1;
+}
+.mini-nav:hover {
+  background: rgba(0,0,0,0.8);
+}
+.mini-nav.prev { left: 8px; }
+.mini-nav.next { right: 8px; }
+
+.mini-dots {
+  position: absolute;
+  bottom: 12px; /* 캡션 위로 조금 올림 */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* 간격 넓힘 */
+  z-index: 2;
+  pointer-events: none;
+}
+.mini-dot {
+  width: 8px; /* 크기 키움 */
+  height: 8px; /* 크기 키움 */
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5); /* 비활성 점 색상 */
+  transition: background 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3); /* 시인성을 위해 그림자 추가 */
+}
+.mini-dot.active {
+  background: #ffffff; /* 활성 점 완전 흰색 */
+  transform: scale(1.1); /* 활성 점 약간 크게 */
+}
+
 .gallery-cap{
   padding:12px 12px 14px;
   background: var(--card);
@@ -894,12 +983,12 @@ h3{margin:0 0 8px; font-size:18px}
 
 @media (max-width: 980px){
   .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
-  .gallery-thumb{ height:200px; }
+  .gallery-thumb, .gallery-mini-slider { height:200px; }
 }
 
 @media (max-width: 560px){
   .gallery-grid{ grid-template-columns: 1fr; }
-  .gallery-thumb{ height:220px; }
+  .gallery-thumb, .gallery-mini-slider { height:220px; }
   .lightbox-panel{ margin: 14px auto; }
 }
 

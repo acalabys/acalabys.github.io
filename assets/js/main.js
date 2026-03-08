@@ -246,13 +246,6 @@ function renderPublications(itemsRaw) {
     });
 
     // group by year desc
-    //const byYear = new Map();
-    //filtered
-    //  .sort((a, b) => (b.year - a.year) || (String(a.title).localeCompare(String(b.title))))
-    //  .forEach(p => {
-    //    if (!byYear.has(p.year)) byYear.set(p.year, []);
-    //    byYear.get(p.year).push(p);
-    //  });
     const indexed = filtered.map((p, i) => ({ p, i }));
 
     indexed.sort((a, b) => {
@@ -266,7 +259,13 @@ function renderPublications(itemsRaw) {
     
       // 3) date가 같거나 없으면 JSON 순서 유지
       return a.i - b.i;
-      
+    });
+
+    const byYear = new Map();
+    indexed.forEach(({ p }) => {
+      if (!byYear.has(p.year)) byYear.set(p.year, []);
+      byYear.get(p.year).push(p);
+    });
 
     container.innerHTML = "";
 
@@ -560,11 +559,11 @@ function renderGallery(items) {
   let current = 0;
   let filtered = [...items];
 
-  const openLB = (idx) => {
+  const openLB = (idx, overrideSrc = null) => {
     current = Math.max(0, Math.min(idx, filtered.length - 1));
     const it = filtered[current];
 
-    lbImg.src = it.src;
+    lbImg.src = overrideSrc || it.src || (it.images && it.images[0]) || "";
     lbImg.alt = it.title ? it.title : "gallery image";
     lbTitle.textContent = it.title || "";
     lbDesc.textContent = it.desc || (it.date ? it.date : "");
@@ -621,17 +620,79 @@ function renderGallery(items) {
 
     grid.innerHTML = "";
     filtered.forEach((it, idx) => {
-      const card = document.createElement("button");
-      card.type = "button";
+      const card = document.createElement("div");
       card.className = "gallery-item";
-      card.setAttribute("aria-label", `${it.title || "Photo"} 확대보기`);
 
-      const img = document.createElement("img");
-      img.className = "gallery-thumb";
-      img.src = it.thumb || it.src;
-      img.alt = it.title || "Gallery photo";
-      img.loading = "lazy";
-      img.decoding = "async";
+      const media = document.createElement("div");
+      media.className = "gallery-media";
+      
+      const images = it.images && it.images.length > 0 ? it.images : [it.src || it.thumb];
+
+      if (images.length <= 1) {
+        const img = document.createElement("img");
+        img.className = "gallery-thumb";
+        img.src = images[0] || it.thumb || it.src;
+        img.alt = it.title || "Gallery photo";
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.addEventListener("click", () => openLB(idx, img.src));
+        media.appendChild(img);
+      } else {
+        const slider = document.createElement("div");
+        slider.className = "gallery-mini-slider";
+        
+        const track = document.createElement("div");
+        track.className = "gallery-mini-track";
+        
+        images.forEach((imgSrc) => {
+          const img = document.createElement("img");
+          img.className = "gallery-thumb";
+          img.style.display = "block"; // img 태그의 기본 inline 속성 여백 제거
+          img.src = imgSrc;
+          img.loading = "lazy";
+          img.decoding = "async";
+          img.addEventListener("click", () => openLB(idx, imgSrc));
+          track.appendChild(img);
+        });
+        
+        slider.appendChild(track);
+        
+        const prev = document.createElement("button");
+        prev.className = "mini-nav prev";
+        prev.innerHTML = "&#10094;";
+        prev.onclick = (e) => {
+          e.stopPropagation();
+          track.scrollBy({ left: -track.clientWidth, behavior: "smooth" });
+        };
+        
+        const next = document.createElement("button");
+        next.className = "mini-nav next";
+        next.innerHTML = "&#10095;";
+        next.onclick = (e) => {
+          e.stopPropagation();
+          track.scrollBy({ left: track.clientWidth, behavior: "smooth" });
+        };
+        
+        slider.appendChild(prev);
+        slider.appendChild(next);
+        
+        const dots = document.createElement("div");
+        dots.className = "mini-dots";
+        images.forEach((_, i) => {
+          const d = document.createElement("div");
+          d.className = "mini-dot" + (i === 0 ? " active" : "");
+          dots.appendChild(d);
+        });
+        
+        track.addEventListener("scroll", () => {
+          const w = track.clientWidth;
+          const index = Math.round(track.scrollLeft / w);
+          [...dots.children].forEach((d, i) => d.classList.toggle("active", i === index));
+        });
+        
+        slider.appendChild(dots);
+        media.appendChild(slider);
+      }
 
       const cap = document.createElement("div");
       cap.className = "gallery-cap";
@@ -640,9 +701,8 @@ function renderGallery(items) {
         <div class="gallery-sub muted">${safeText(it.date || "")}</div>
       `;
 
-      card.appendChild(img);
+      card.appendChild(media);
       card.appendChild(cap);
-      card.addEventListener("click", () => openLB(idx));
       grid.appendChild(card);
     });
 
