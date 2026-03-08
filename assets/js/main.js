@@ -115,13 +115,18 @@ function renderNews(news) {
   if (!list) return;
 
   list.innerHTML = "";
-  news.slice(0, 6).forEach((n) => {
-    const card = el("article", "card glass");
+  news.slice(0, 10).forEach((n) => {
+    const card = el("article", "card glass news-card");
     card.appendChild(el("div", "card-top",
       `<span class="pill">${safeText(n.date)}</span>`
     ));
     card.appendChild(el("div", "card-title", safeText(n.title)));
-    card.appendChild(el("p", "muted", safeText(n.desc || "")));
+    
+    // 내용(desc)이 있을 때만 문단 추가
+    if (n.desc && n.desc.trim() !== "") {
+      card.appendChild(el("p", "muted", n.desc)); // 볼드 처리(HTML 태그) 허용을 위해 safeText 제거
+    }
+    
     if (n.link?.href) {
       const a = el("a", "link", safeText(n.link.label || "More →"));
       a.href = n.link.href;
@@ -766,10 +771,14 @@ function initHeroCarousel(items) {
 
   if (!Array.isArray(items) || items.length === 0) return;
 
+  // 1번 방식: 매번 랜덤으로 4장의 이미지를 골라서 보여주기
+  const shuffledItems = [...items].sort(() => 0.5 - Math.random());
+  const selectedItems = shuffledItems.slice(0, 4);
+
   let idx = 0;
 
   const render = () => {
-    const it = items[idx];
+    const it = selectedItems[idx];
     img.src = it.img;
     img.alt = it.title || "highlight";
     title.textContent = it.title || "";
@@ -778,7 +787,7 @@ function initHeroCarousel(items) {
 
     // dots
     dots.innerHTML = "";
-    items.forEach((_, i) => {
+    selectedItems.forEach((_, i) => {
       const b = document.createElement("button");
       b.type = "button";
       b.className = "dot" + (i === idx ? " active" : "");
@@ -789,12 +798,25 @@ function initHeroCarousel(items) {
   };
 
   const go = (delta) => {
-    idx = (idx + delta + items.length) % items.length;
+    idx = (idx + delta + selectedItems.length) % selectedItems.length;
     render();
   };
 
-  btnPrev?.addEventListener("click", () => go(-1));
-  btnNext?.addEventListener("click", () => go(1));
+  if (btnPrev) {
+    btnPrev.addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault(); // 버튼 클릭 시 링크 이동 방지
+      go(-1);
+    });
+  }
+  
+  if (btnNext) {
+    btnNext.addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault(); // 버튼 클릭 시 링크 이동 방지
+      go(1);
+    });
+  }
 
   // keyboard support
   root.addEventListener("keydown", (e) => {

@@ -1,21 +1,74 @@
 [
   {
-    "img": "assets/img/gallery/group-2025.jpg",
-    "title": "2025 Group Photo",
-    "caption": "End-of-year group photo. (Dec 2025)",
+    "img": "assets/img/acalab-logoc.png",
+    "title": "ACALab @ Yonsei",
+    "caption": "Algorithm, Circuits, Architecture Lab at Yonsei University",
+    "link": "index.html"
+  },
+  {
+    "img": "assets/img/gallery/260224_futsal_1.jpg",
+    "title": "2026 Futsal",
+    "caption": "Lab Futsal Activity",
     "link": "gallery.html"
   },
   {
-    "img": "assets/img/gallery/highlightpaper.jpg",
-    "title": "Recent Research Highlight",
-    "caption": "Low-precision formats & memory bottlenecks discussion.",
+    "img": "assets/img/gallery/260127_new_year_party.jpg",
+    "title": "2026 New Year Party",
+    "caption": "Welcoming 2026",
     "link": "gallery.html"
   },
   {
-    "img": "assets/img/gallery/conference.jpg",
-    "title": "Visiting DAC 2025",
-    "caption": "Project demos and poster session.",
-    "link": "projects.html"
+    "img": "assets/img/gallery/251219_year_end_party.jpg",
+    "title": "2025 Year-End Party",
+    "caption": "Farewell 2025",
+    "link": "gallery.html"
+  },
+  {
+    "img": "assets/img/gallery/250821_workshop_1.jpg",
+    "title": "2025 Workshop",
+    "caption": "Summer Lab Workshop",
+    "link": "gallery.html"
+  },
+  {
+    "img": "assets/img/gallery/2025_DAC.jpg",
+    "title": "2025 DAC",
+    "caption": "Visiting DAC 2025",
+    "link": "gallery.html"
+  },
+  {
+    "img": "assets/img/research_1/ai_system_design.png",
+    "title": "AI System Design",
+    "caption": "Exploring Full-Stack AI Acceleration",
+    "link": "research.html"
+  },
+  {
+    "img": "assets/img/research_1/algorithm_hardware_co_design.png",
+    "title": "Algorithm-Hardware Co-Design",
+    "caption": "Optimizing AI Models for Hardware",
+    "link": "research.html"
+  },
+  {
+    "img": "assets/img/research_1/serq.png",
+    "title": "SeRQ Framework",
+    "caption": "Advanced Model Quantization",
+    "link": "research.html"
+  },
+  {
+    "img": "assets/img/research_2/dataflow_accelerator.png",
+    "title": "Dataflow Accelerator",
+    "caption": "System for ML Architectures",
+    "link": "research.html"
+  },
+  {
+    "img": "assets/img/research_2/mixed_precision.png",
+    "title": "Mixed Precision Architecture",
+    "caption": "Efficient Hardware Designs",
+    "link": "research.html"
+  },
+  {
+    "img": "assets/img/research_2/sparsity.png",
+    "title": "Sparsity-aware PE Architecture",
+    "caption": "Removing Redundant Multiplications and Repetitive Data",
+    "link": "research.html"
   }
 ]
-

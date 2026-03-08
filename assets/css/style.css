@@ -77,21 +77,21 @@ a:hover{text-decoration:underline}
 }
 
 .brand-mark{
-  width:88px;              /* 로고 컨테이너 크기 */
-  height:44px;
+  width:120px;             /* 로고 너비 더 키움 */
+  height:60px;             /* 로고 높이 더 키움 */
   border-radius:12px;
-  overflow:hidden;         /* 둥근 모서리 적용 */
+  overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:transparent;  /* 기존 파란 배경 제거 */
-  box-shadow:none;         /* 필요하면 다시 추가 가능 */
+  background:transparent;
+  box-shadow:none;
 }
 
 .brand-mark img{
   width:100%;
   height:100%;
-  object-fit:contain;      /* 로고 잘리지 않게 */
+  object-fit:contain;
   display:block;
 }
 
@@ -225,15 +225,24 @@ h3{margin:0 0 8px; font-size:18px}
 .pub,
 .member,
 .glass{
+  border-radius:var(--radius);
+}
+
+/* 개별 카드별 배경/테두리 재지정 (hero-card 분리) */
+.card,
+.pub,
+.member,
+.glass{
   background:var(--card);
   border:1px solid var(--line);
-  border-radius:var(--radius);
   box-shadow:var(--shadow);
 }
 
 .hero-card{
-  padding:14px;
+  padding:0px; /* 원래 있던 14px 패딩(여백) 제거 */
   box-shadow:var(--shadow-strong);
+  background: transparent; /* 카드 자체의 흰색 배경 제거 */
+  border: none; /* 외곽선 제거 */
 }
 
 .badge{
@@ -255,6 +264,26 @@ h3{margin:0 0 8px; font-size:18px}
 .stat:last-child{border-bottom:none}
 .stat-num{font-size:30px; font-weight:900}
 .stat-label{font-size:13px; color:var(--muted)}
+
+/* News 카드 여백 및 간격 최적화 */
+.news-card {
+  padding: 16px 16px 12px 16px !important; /* 아래쪽 여백(12px)을 줄임 */
+}
+
+.news-card .card-title {
+  margin-bottom: 0; /* 제목 아래 기본 마진 제거 */
+}
+
+.news-card p.muted {
+  margin-top: 8px; /* 내용이 있을 경우 위쪽 간격 조정 */
+  margin-bottom: 0;
+}
+
+/* News 설명 내에서 strong 태그를 썼을 때의 스타일: 굵게 + 테마 파란색 */
+.news-card p.muted strong {
+  color: var(--blue-dark);
+  font-weight: 800;
+}
 
 .card-list{display:grid; gap:14px}
 .card{padding:16px}
@@ -998,20 +1027,29 @@ h3{margin:0 0 8px; font-size:18px}
   border-radius: var(--radius);
   overflow:hidden;
   border:1px solid rgba(255,255,255,.14); /* hero 카드가 블루일 때도 어울림 */
+  background: transparent;
 }
 
 .carousel-stage{
   display:block;
   position:relative;
   text-decoration:none;
+  background: transparent;
 }
 
 .carousel-stage img{
   width:100%;
   height:360px;
-  object-fit:cover;
+  object-fit:cover; /* 기본 사진은 꽉 채움 */
   display:block;
-  background: rgba(255,255,255,.06);
+  background: transparent;
+}
+
+/* Research 이미지처럼 배경이 투명/흰색인 다이어그램의 경우 테두리 여백 없이 꽉 채우거나 원래 비율 유지 */
+.carousel-stage img[src*="research"] {
+  object-fit: contain; /* 이미지가 잘리지 않게 다 보여줌 */
+  background: #ffffff; /* 배경이 투명한 이미지를 위해 뒷배경을 흰색으로 고정 */
+  padding: 16px; /* 너무 꽉 차서 테두리에 닿지 않도록 안쪽 여백 추가 (원치 않으면 0으로 변경 가능) */
 }
 
 /* caption overlay */
@@ -1044,17 +1082,27 @@ h3{margin:0 0 8px; font-size:18px}
   transform:translateY(-50%);
   width:40px;
   height:40px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.22);
-  background: rgba(0,0,0,.22);
+  border-radius:50%; /* 둥글게 */
+  border:none;
+  background: rgba(0,0,0,.5); /* 배경색 좀 더 진하게 */
   color:#fff;
-  font-size:22px;
+  font-size:18px;
+  font-weight:bold;
   line-height:1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor:pointer;
+  z-index: 10; /* 이미지 위에 뜨도록 */
+  opacity: 0; /* 평소엔 안보이게 */
+  transition: all 0.2s ease;
 }
-.carousel-btn:hover{ filter:brightness(1.06); }
-.carousel-btn.prev{ left:10px; }
-.carousel-btn.next{ right:10px; }
+.carousel:hover .carousel-btn {
+  opacity: 1; /* 마우스 올리면 보이게 */
+}
+.carousel-btn:hover{ background: rgba(0,0,0,.8); }
+.carousel-btn.prev{ left:12px; }
+.carousel-btn.next{ right:12px; }
 
 /* dots */
 .carousel-dots{
