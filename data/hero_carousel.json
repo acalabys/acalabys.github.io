@@ -1,6 +1,6 @@
 [
   {
-    "img": "assets/img/acalab-logoc.png",
+    "img": "assets/img/logo4main.png",
     "title": "ACALab @ Yonsei",
     "caption": "Algorithm, Circuits, Architecture Lab at Yonsei University",
     "link": "index.html"
@@ -54,9 +54,21 @@
     "link": "research.html"
   },
   {
-    "img": "assets/img/research_2/dataflow_accelerator.png",
+    "img": "assets/img/research_1/dataflow_accelerator.png",
     "title": "Dataflow Accelerator",
     "caption": "System for ML Architectures",
+    "link": "research.html"
+  },
+  {
+    "img": "assets/img/research_2/mersit.png",
+    "title": "MERSIT",
+    "caption": "A Novel 8-bit PTQ Data Format for Various DNNs",
+    "link": "research.html"
+  },
+  {
+    "img": "assets/img/research_2/pnm.png",
+    "title": "Processing Near Memory (PNM)",
+    "caption": "Scalable Hardware-Software Solutions for Massive-Scale AI Retrieval Systems",
     "link": "research.html"
   },
   {

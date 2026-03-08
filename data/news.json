@@ -38,5 +38,21 @@
   {
     "date": "2024-10-17",
     "desc": "Our group's paper \"<strong>A 33.06 Gb/s Reconfigurable Galois Field oFEC Decoder for Optical Inter-Satellite Communication</strong>\" has been accepted to <strong>IEEE Solid-State Circuits Letters</strong>."
+  },
+  {
+    "date": "2024-05-19",
+    "desc": "Our group's paper \"<strong>ParaBase: A Configurable Parallel Baseband Processor for Ultra-High-Speed Inter-Satellite Optical Communications</strong>\" has been accepted to <strong>ISLPED'24</strong>. Congratulations!"
+  },
+  {
+    "date": "2024-03-11",
+    "desc": "Yeonsik and Gyuwan have joined our group as undergraduate researchers. Welcome!"
+  },
+  {
+    "date": "2024-02-21",
+    "desc": "Sungjun and Minje have joined our group as graduate research fellows. Welcome!"
+  },
+  {
+    "date": "2024-02-14",
+    "desc": "Our group's paper \"<strong>MERSIT: A Hardware-Efficient 8-bit Data Format with Enhanced Post-Training Quantization DNN Accuracy</strong>\" has been accepted to <strong>DAC'24</strong>. Congratulations!"
   }
 ]

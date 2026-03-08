@@ -288,6 +288,26 @@ h3{margin:0 0 8px; font-size:18px}
 .card-list{display:grid; gap:14px}
 .card{padding:16px}
 
+/* Highlights Card */
+.highlight-link {
+  text-decoration: none;
+  display: block;
+}
+
+.highlight-img-only {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover; /* 세 이미지의 크기를 완벽하게 동일하게 맞춤 */
+  display: block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  border-radius: var(--radius);
+}
+
+.highlight-link:hover .highlight-img-only {
+  transform: translateY(-4px);
+  opacity: 0.9;
+}
+
 .research-card {
   padding: 16px
   /* overflow: hidden; */
@@ -1028,6 +1048,11 @@ h3{margin:0 0 8px; font-size:18px}
   overflow:hidden;
   border:1px solid rgba(255,255,255,.14); /* hero 카드가 블루일 때도 어울림 */
   background: transparent;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25); /* 캐러셀 전체에 그림자 효과 추가 */
+  transition: box-shadow 0.3s ease; /* 그림자 부드럽게 */
+}
+.carousel:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5); /* 마우스 오버 시 그림자 더 강하게 */
 }
 
 .carousel-stage{
@@ -1050,6 +1075,15 @@ h3{margin:0 0 8px; font-size:18px}
   object-fit: contain; /* 이미지가 잘리지 않게 다 보여줌 */
   background: #ffffff; /* 배경이 투명한 이미지를 위해 뒷배경을 흰색으로 고정 */
   padding: 16px; /* 너무 꽉 차서 테두리에 닿지 않도록 안쪽 여백 추가 (원치 않으면 0으로 변경 가능) */
+}
+
+/* 캐러셀 페이드 효과 애니메이션 */
+@keyframes fadeIn {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+.fade-anim {
+  animation: fadeIn 0.4s ease-in-out;
 }
 
 /* caption overlay */
@@ -1202,12 +1236,12 @@ h3{margin:0 0 8px; font-size:18px}
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  /* gap: 8px; */
 }
 .overview-media {
   width: 100%;
-  max-width: 800px;
-  padding: 0 16px;
+  max-width: 720px;
+  /* padding: 0 16px; */
 }
 .overview-media img {
   width: 100%;

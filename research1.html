@@ -97,7 +97,7 @@
           <ul class="clean-list">
             <li>
               <strong>Summary:</strong> <br/>
-              - We are focusing on hardware-efficient algorithms for large foundation models by leveraging various model compression techniques. We provide optimal, lightweight solutions for target hardware by directly optimizing the trade-offs among storage, computation, and accuracy.
+              - We are focusing on hardware-efficient algorithms for large foundation models by leveraging various model compression techniques(Quantization, Pruning, Knowledge Distillation, etc.). We provide optimal, lightweight solutions for target hardware by directly optimizing the trade-offs among storage, computation and accuracy.
             </li>
 
             <li>
@@ -108,6 +108,32 @@
         </div>
         <div class="split-media no-border research-detail-img">
           <img src="assets/img/research_1/serq.png" alt="Efficient Algorithm for Deep Learning Models" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: A dataflow architecture design (AI Processor) -->
+    <div class="subtopic">
+      <div class="subtopic-head left-text">
+        <h3>A Dataflow Architecture Design (AI Processor)</h3>
+      </div>
+      <!-- left text, right img (5:5) -->
+      <div class="split split-5-5 reverse-on-desktop">
+        <div class="split-body left-text">
+          <ul class="clean-list">
+            <li>
+              <strong>Summary:</strong> <br/>
+              - A scalable deep-learning accelerator supporting the training process is implemented for device personalization of deep convolutional neural networks (CNNs). It consists of three processor cores operating with distinct energy-efficient dataflow for different types of computation in CNN training. A disparate dataflow architecture is implemented for the weight gradient computation to enhance PE utilization while maximally reuse the input data.
+            </li>
+
+            <li>
+              <strong>Reference:</strong> <br/>
+              <span class="ref-paper">- Seungkyu Choi, Jaehyeong Sim, Myeonggu Kang, Yeongjae Choi, Hyeonuk Kim, and Lee-Sup Kim, "An Energy-Efficient Deep Convolutional Neural Network Training Accelerator for In Situ Personalization on Smart Devices," IEEE Journal of Solid-State Circuits, Oct. 2020.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="split-media no-border research-detail-img">
+          <img src="assets/img/research_1/dataflow_accelerator.png" alt="A Dataflow Architecture Design (AI Processor)" loading="lazy" decoding="async">
         </div>
       </div>
     </div>

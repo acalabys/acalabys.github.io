@@ -20,9 +20,9 @@
       { "value": "M+", "label": "Members" }
     ],
     "highlights": [
-      { "title": "AI Accelerator", "desc": "Low-precision, sparsity, KV-cache, end-to-end efficiency." },
-      { "title": "SoC / FPGA", "desc": "IP design, bus/DMA, verification, rapid prototyping." },
-      { "title": "System Architecture", "desc": "HBM/DRAM, PIM, storage-compute co-design." }
+      { "title": "AI Accelerator", "desc": "Low-precision, sparsity, KV-cache, end-to-end efficiency.", "img": "assets/img/index/ai_acc_0.png" },
+      { "title": "SoC / FPGA", "desc": "IP design, bus/DMA, verification, rapid prototyping.", "img": "assets/img/index/soc_0.png" },
+      { "title": "System Architecture", "desc": "HBM/DRAM, PIM, storage-compute co-design.", "img": "assets/img/index/archi_0.png" }
     ]
   },
   "contact": {

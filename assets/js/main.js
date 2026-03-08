@@ -102,10 +102,21 @@ function renderHero(site) {
   if (hg) {
     hg.innerHTML = "";
     (hero.highlights || []).forEach((h) => {
-      const card = el("div", "feature glass");
-      card.appendChild(el("h3", "", safeText(h.title)));
-      card.appendChild(el("p", "muted", safeText(h.desc)));
-      hg.appendChild(card);
+      if (!h.img) return;
+      
+      const link = document.createElement("a");
+      link.href = "research.html";
+      link.className = "highlight-link";
+
+      const img = document.createElement("img");
+      img.src = h.img;
+      img.alt = h.title;
+      img.className = "highlight-img-only";
+      img.loading = "lazy";
+      img.decoding = "async";
+      
+      link.appendChild(img);
+      hg.appendChild(link);
     });
   }
 }
@@ -771,14 +782,22 @@ function initHeroCarousel(items) {
 
   if (!Array.isArray(items) || items.length === 0) return;
 
-  // 1번 방식: 매번 랜덤으로 4장의 이미지를 골라서 보여주기
-  const shuffledItems = [...items].sort(() => 0.5 - Math.random());
-  const selectedItems = shuffledItems.slice(0, 4);
+  // 첫 번째 아이템(ACALab 로고 등)을 고정하고, 나머지 중 3개를 랜덤으로 선택하여 총 4장 구성
+  const firstItem = items[0];
+  const restItems = items.slice(1);
+  const shuffledRest = [...restItems].sort(() => 0.5 - Math.random());
+  const selectedItems = [firstItem, ...shuffledRest.slice(0, 3)];
 
   let idx = 0;
 
   const render = () => {
     const it = selectedItems[idx];
+    
+    // 그림 전환 효과 (Fade-in)
+    img.classList.remove("fade-anim");
+    void img.offsetWidth; // 브라우저 리플로우 강제 발생 (애니메이션 재시작)
+    img.classList.add("fade-anim");
+
     img.src = it.img;
     img.alt = it.title || "highlight";
     title.textContent = it.title || "";
