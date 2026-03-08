@@ -19,7 +19,7 @@
     "region": "international",
     "type": "conference",
     "title": "SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization",
-    "authors": "Yeonsik Park, Hyeonseong Kim, Jiyun Han, and Seungkyu Choi",
+    "authors": "Yeonsik Park, Hyeonseong Kim, and Seungkyu Choi",
     "venue": "ICLR",
     "detail": "In Proceedings of the International Conference on Learning Representations (ICLR)",
     "marks": ["top-tier", "cs"],
