@@ -49,7 +49,7 @@
   },
   {
     "img": "assets/img/research_1/serq.png",
-    "title": "SeRQ Framework",
+    "title": "SERQ Framework",
     "caption": "Advanced Model Quantization",
     "link": "research.html"
   },
@@ -67,7 +67,7 @@
   },
   {
     "img": "assets/img/research_2/pnm.png",
-    "title": "Processing Near Memory (PNM)",
+    "title": "Efficient Memory Architecture",
     "caption": "Scalable Hardware-Software Solutions for Massive-Scale AI Retrieval Systems",
     "link": "research.html"
   },
@@ -83,4 +83,5 @@
     "caption": "Removing Redundant Multiplications and Repetitive Data",
     "link": "research.html"
   }
+
 ]
