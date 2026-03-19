@@ -128,16 +128,34 @@ function renderNews(news) {
   list.innerHTML = "";
   news.slice(0, 10).forEach((n) => {
     const card = el("article", "card glass news-card");
-    card.appendChild(el("div", "card-top",
-      `<span class="pill">${safeText(n.date)}</span>`
-    ));
-    card.appendChild(el("div", "card-title", safeText(n.title)));
-    
-    // 내용(desc)이 있을 때만 문단 추가
-    if (n.desc && n.desc.trim() !== "") {
-      card.appendChild(el("p", "muted", n.desc)); // 볼드 처리(HTML 태그) 허용을 위해 safeText 제거
+
+    // desc 안에 포함된 날짜([YYYY-MM-DD])를 분리해서 날짜/내용을 독립적으로 사용
+    let raw = n.desc || "";
+    let dateText = "";
+    let bodyHtml = raw;
+
+    const m = raw.match(/^<b>\[(.*?)\]<\/b>&nbsp;&nbsp;(.*)$/);
+    if (m) {
+      dateText = m[1];
+      bodyHtml = m[2];
     }
-    
+
+    // 날짜와 본문을 가로 정렬하는 행 컨테이너
+    const row = el("div", "news-row");
+
+    if (dateText) {
+      const dateEl = el("div", "news-date", `<span class="pill"><b>[${safeText(dateText)}]</b></span>`);
+      row.appendChild(dateEl);
+    }
+
+    // 내용(desc)이 있을 때만 문단 추가
+    if (bodyHtml && bodyHtml.trim() !== "") {
+      const bodyEl = el("p", "muted news-body", bodyHtml); // bold 등 HTML 태그 허용
+      row.appendChild(bodyEl);
+    }
+
+    card.appendChild(row);
+
     if (n.link?.href) {
       const a = el("a", "link", safeText(n.link.label || "More →"));
       a.href = n.link.href;
@@ -319,8 +337,19 @@ function renderPublications(itemsRaw) {
       
         const where = document.createElement("div");
         where.className = "pub-where";
-        where.textContent = p.venueDisplay || p.venue || "";
-        
+        const venuePart = p.venueDisplay || p.venue || "";
+        let metaPart = "";
+        if (p.type === "journal") {
+          const bits = [];
+          if (p.volume) bits.push(`vol. ${p.volume}`);
+          if (p.issue) bits.push(`no. ${p.issue}`);
+          if (p.pages) bits.push(`p. ${p.pages}`);
+          if (p.pubDate) bits.push(p.pubDate);
+          if (p.earlyAccess) bits.push("early access");
+          if (bits.length) metaPart = ", " + bits.join(", ");
+        }
+        where.innerHTML = `<b>${safeText(venuePart)}</b><span class="pub-where-meta">${safeText(metaPart)}</span>`;
+
         // marks (venue 옆으로)
         const marksRow = document.createElement("div");
         marksRow.className = "mark-row inline";
@@ -353,8 +382,6 @@ function renderPublications(itemsRaw) {
         item.appendChild(title);
         item.appendChild(meta);
         item.appendChild(whereRow);
-        //if (marksRow.childNodes.length) item.appendChild(marksRow);
-        //if (linksRow.childNodes.length) item.appendChild(linksRow);
       
         list.appendChild(item);
       });

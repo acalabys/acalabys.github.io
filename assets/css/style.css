@@ -270,12 +270,28 @@ h3{margin:0 0 8px; font-size:18px}
   padding: 16px 16px 12px 16px !important; /* 아래쪽 여백(12px)을 줄임 */
 }
 
+/* News: 날짜(왼쪽)와 내용(오른쪽)을 한 줄에 배치 */
+.news-row{
+  display:flex;
+  gap:12px;
+  align-items:baseline; /* 날짜 텍스트와 본문 첫 줄의 높이를 맞춤 */
+}
+
+.news-date{
+  flex:0 0 auto;
+}
+
+.news-body{
+  flex:1 1 auto;
+  margin-top:0;
+}
+
 .news-card .card-title {
   margin-bottom: 0; /* 제목 아래 기본 마진 제거 */
 }
 
 .news-card p.muted {
-  margin-top: 8px; /* 내용이 있을 경우 위쪽 간격 조정 */
+  margin-top: 8px; /* (단독 사용 시) 내용이 있을 경우 위쪽 간격 조정 */
   margin-bottom: 0;
 }
 
@@ -426,6 +442,11 @@ h3{margin:0 0 8px; font-size:18px}
   font-style: italic;
   margin-top: 6px;
   font-weight: 700;
+}
+
+/* 저널 vol./pages/날짜 등은 볼드 제외 */
+.pub-where-meta{
+  font-weight: 400;
 }
 
 .pub-detail{

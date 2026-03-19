@@ -22,7 +22,7 @@
     "venueDisplay": "International Conference on Learning Representations (ICLR)",
     "marks": ["top-tier", "cs"],
     "links": [
-      { "label": "DOI", "href": "https://doi.org/xxx" }
+      { "label": "DOI", "href": "https://doi.org/10.48550/arXiv.2603.08185" }
     ]
   },
   {
@@ -33,6 +33,10 @@
     "title": "Q-VESA: Accelerating Quantization-Aware Vector Search for Fast Retrieval in Prompt Engineering",
     "authors": "Seongjoon Cho, Junyoung Park, Donghyun Kang, Moohyeon Nam, Hongchan Roh, Moo-Kyoung Chung, Se-Hyun Yang, and Seungkyu Choi",
     "venueDisplay": "IEEE Transactions on Computers (TC)",
+    "volume": "75",
+    "issue": "3",
+    "pages": "1028-1042",
+    "pubDate": "March 2026",
     "marks": ["top-tier", "scie"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/TC.2025.3644935" }
@@ -46,6 +50,9 @@
     "title": "Accelerating On-Device Visual Task Adaptation by Exploiting Hybrid Sparsity in DNN Training",
     "authors": "Minje Park, Yeonsik Park, and Seungkyu Choi",
     "venueDisplay": "Journal of Systems Architecture (JSA)",
+    "volume": "168",
+    "issue": "103535",
+    "pubDate": "November 2025",
     "marks": ["scie-q1"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1016/j.sysarc.2025.103535" }
@@ -71,6 +78,10 @@
     "title": "PABLO: A Variation-Robust PIM Architecture for Bulk Bitwise Logical Operations in DRAM",
     "authors": "Minh-Son Le, Thanh-Dat Nguyen, Jeong-Hoan Park, Seungkyu Choi, and Ik-Joon Chang",
     "venueDisplay": "IEEE Transactions on Emerging Topics in Computing (TETC)",
+    "volume": "13",
+    "issue": "4",
+    "pages": "1424-1439",
+    "pubDate": "October 2024",
     "marks": ["major", "scie-q1"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/TETC.2024.3486348" }
@@ -83,6 +94,9 @@
     "title": "A 33.06 Gb/s Reconfigurable Galois Field oFEC Decoder for Optical Inter-Satellite Communication",
     "authors": "Xiangdong Wei, Yufan Yue, Seungkyu Choi, Tutu Ajayi, Ronald Dreslinski, David Blaauw, and Hun-Seok Kim",
     "venueDisplay": "IEEE Solid-State Circuits Letters (SSC-L)",
+    "volume": "7",
+    "pages": "331-334",
+    "pubDate": "October 2024",
     "marks": ["major"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/LSSC.2024.3486234" }
@@ -131,6 +145,10 @@
     "title": "Accelerating On-Device DNN Training Workloads via Runtime Convergence Monitor",
     "authors": "Seungkyu Choi, Jaekang Shin, Lee-Sup Kim",
     "venueDisplay": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)",
+    "volume": "42",
+    "issue": "5",
+    "pages": "1574-1587",
+    "pubDate": "May 2023",
     "marks": ["top-tier", "scie"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/TCAD.2022.3206394" }
@@ -143,6 +161,10 @@
     "title": "Energy-Efficient CNN Personalized Training by Adaptive Data Reformation",
     "authors": "Youngbeom Jung, Hyeonuk Kim, Seungkyu Choi, Jaekang Shin, and Lee-Sup Kim",
     "venueDisplay": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)",
+    "volume": "42",
+    "issue": "1",
+    "pages": "332-336",
+    "pubDate": "January 2023",
     "marks": ["top-tier", "scie"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/TCAD.2022.3170845" }
@@ -167,6 +189,10 @@
     "title": "A Deep Neural Network Training Architecture with Inference-aware Heterogeneous Data-type",
     "authors": "Seungkyu Choi, Jaekang Shin, and Lee-Sup Kim",
     "venueDisplay": "IEEE Transactions on Computers (TC)",
+    "volume": "71",
+    "issue": "5",
+    "pages": "1216-1229",
+    "pubDate": "May 2022",
     "marks": ["top-tier", "scie"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/TC.2021.3078316" }
@@ -179,6 +205,10 @@
     "title": "Rare Computing: Removing Redundant Multiplications from Sparse and Repetitive Data in Deep Neural Networks",
     "authors": "Kangkyu Park, Seungkyu Choi, Youngjae Choi, and Lee-Sup Kim",
     "venueDisplay": "IEEE Transactions on Computers (TC)",
+    "volume": "71",
+    "issue": "4",
+    "pages": "795-808",
+    "pubDate": "April 2022",
     "marks": ["top-tier", "scie"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/TC.2021.3063269" }
@@ -203,6 +233,10 @@
     "title": "An Energy-Efficient Deep Convolutional Neural Network Training Accelerator for In Situ Personalization on Smart Devices",
     "authors": "Seungkyu Choi, Jaehyeong Sim, Myeonggu Kang, Yeongjae Choi, Hyeonuk Kim, and Lee-Sup Kim",
     "venueDisplay": "IEEE Journal of Solid-State Circuits (JSSC)",
+    "volume": "55",
+    "issue": "10",
+    "pages": "2691-2702",
+    "pubDate": "October 2020",
     "marks": ["top-tier", "scie-q1"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/JSSC.2020.3005786" }
@@ -275,6 +309,10 @@
     "title": "Energy-Efficient Design of Processing Element for Convolutional Neural Network",
     "authors": "Yeongjae Choi, Dongmyung Bae, Jaehyeong Sim, Seungkyu Choi, Minhye Kim, and Lee-Sup Kim",
     "venueDisplay": "IEEE Transactions on Circuits and Systems II: Express Briefs (T-CAS II)",
+    "volume": "64",
+    "issue": "11",
+    "pages": "1332-1336",
+    "pubDate": "November 2017",
     "marks": ["major", "scie"],
     "links": [
       { "label": "DOI", "href": "https://doi.org/10.1109/TCSII.2017.2691771" }
