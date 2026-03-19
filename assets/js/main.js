@@ -319,11 +319,7 @@ function renderPublications(itemsRaw) {
       
         const where = document.createElement("div");
         where.className = "pub-where";
-        where.textContent = [
-          p.venue,
-          p.type ? `(${p.type})` : "",
-          p.region ? `· ${p.region}` : ""
-        ].filter(Boolean).join(" ");
+        where.textContent = p.venueDisplay || p.venue || "";
         
         // marks (venue 옆으로)
         const marksRow = document.createElement("div");
@@ -335,13 +331,7 @@ function renderPublications(itemsRaw) {
           marksRow.appendChild(span);
         });
         
-        // venue + marks row
-        const whereRow = document.createElement("div");
-        whereRow.className = "pub-where-row";
-        whereRow.appendChild(where);
-        if (marksRow.childNodes.length) whereRow.appendChild(marksRow);
-        
-        // links (detail 옆으로)
+        // links (venue 옆 끝에)
         const linksRow = document.createElement("div");
         linksRow.className = "pub-links inline";
         (p.links || []).forEach(l => {
@@ -353,28 +343,16 @@ function renderPublications(itemsRaw) {
           linksRow.appendChild(a);
         });
         
-        // detail + links row
-        let detailRow = null;
-        if (p.detail || linksRow.childNodes.length) {
-          detailRow = document.createElement("div");
-          detailRow.className = "pub-detail-row";
-        
-          if (p.detail) {
-            const detail = document.createElement("div");
-            detail.className = "pub-detail";
-            detail.textContent = p.detail;
-            detailRow.appendChild(detail);
-          }
-          if (linksRow.childNodes.length) detailRow.appendChild(linksRow);
-        }
+        // venue + marks + links 한 줄
+        const whereRow = document.createElement("div");
+        whereRow.className = "pub-where-row";
+        whereRow.appendChild(where);
+        if (marksRow.childNodes.length) whereRow.appendChild(marksRow);
+        if (linksRow.childNodes.length) whereRow.appendChild(linksRow);
       
         item.appendChild(title);
         item.appendChild(meta);
-        
-        //item.appendChild(where);
-        //if (p.detail) item.appendChild(detail);
         item.appendChild(whereRow);
-        if (detailRow) item.appendChild(detailRow);
         //if (marksRow.childNodes.length) item.appendChild(marksRow);
         //if (linksRow.childNodes.length) item.appendChild(linksRow);
       

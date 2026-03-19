@@ -518,6 +518,11 @@ h3{margin:0 0 8px; font-size:18px}
   margin-top: 0;
 }
 
+/* venue 행에서 DOI 등 링크는 오른쪽 끝 정렬 */
+.pub-where-row .pub-links{
+  margin-left: auto;
+}
+
 /* detail이 너무 길면 링크가 아래로 자연스럽게 내려가게 */
 .pub-detail{
   flex: 1 1 520px;

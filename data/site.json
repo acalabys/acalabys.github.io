@@ -3,7 +3,7 @@
     "shortName": "ACA",
     "name": "Algorithm, Circuits, Architecture",
     "org": "Yonsei University / School of Electrical and Electronic Engineering",
-    "kicker": "Next-gen Digital Systems & SW-HW Co-Design",
+    "kicker": "SW-HW Co-Design for Next-Gen. Digital Systems",
     "lead": "We build efficient digital systems — from AI algorithm to hardware accelerators and memory-centric computing platforms.",
     "keywords": [ "AI Accelerator", "Software-Hardware Co-Design", "Hardware-Efficient AI Algroithm", "SoC and Processing-in-Memory"],
     "heroBadge": "Now recruiting",
