@@ -1,6 +1,19 @@
 [
   {
     "year": 2026,
+    "date": "2026-08",
+    "region": "international",
+    "type": "conference",
+    "title": "L^2Mersit: A Scaling-Free Sub-8-bit Data Format for On-Device Reliable Large Language Model Serving",
+    "authors": "Myeongjin Kim, Hyeonseong Kim, Ik Joon Chang, and Seungkyu Choi",
+    "venueDisplay": "IEEE/ACM International Symposium on Low Power Electronics and Design (ISLPED)",
+    "marks": ["major", "cs"],
+    "links": [
+      { "label": "DOI", "href": "https://doi.org/10.1109/ISLPED.2026.00000" }
+    ]
+  },
+  {
+    "year": 2026,
     "date": "2026-07",
     "region": "international",
     "type": "conference",
