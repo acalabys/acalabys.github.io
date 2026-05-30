@@ -1,6 +1,19 @@
 [
   {
     "images": [
+      "assets/img/gallery/260423_iclr2026_1.png",
+      "assets/img/gallery/260423_iclr2026_2.png",
+      "assets/img/gallery/260423_iclr2026_3.png"
+    ],
+    "src": "assets/img/gallery/260423_iclr2026_1.png",
+    "thumb": "assets/img/gallery/260423_iclr2026_1.png",
+    "title": "ICLR 2026",
+    "desc": "",
+    "date": "2026-04-23",
+    "tags": []
+  },
+  {
+    "images": [
       "assets/img/gallery/260224_futsal_1.jpg",
       "assets/img/gallery/260224_futsal_2.jpg",
       "assets/img/gallery/260224_futsal_3.jpg",
