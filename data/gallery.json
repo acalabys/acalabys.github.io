@@ -1,12 +1,12 @@
 [
   {
     "images": [
-      "assets/img/gallery/260423_iclr2026_1.png",
-      "assets/img/gallery/260423_iclr2026_2.png",
-      "assets/img/gallery/260423_iclr2026_3.png"
+      "assets/img/gallery/260423_iclr2026_1.jpg",
+      "assets/img/gallery/260423_iclr2026_2.jpg",
+      "assets/img/gallery/260423_iclr2026_3.jpg"
     ],
-    "src": "assets/img/gallery/260423_iclr2026_1.png",
-    "thumb": "assets/img/gallery/260423_iclr2026_1.png",
+    "src": "assets/img/gallery/260423_iclr2026_1.jpg",
+    "thumb": "assets/img/gallery/260423_iclr2026_1.jpg",
     "title": "ICLR 2026",
     "desc": "",
     "date": "2026-04-23",
