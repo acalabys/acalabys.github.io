@@ -1,19 +1,50 @@
 [
   {
-    "title": "Low-Precision LLM Inference Accelerator",
-    "summary": "INT4/INT8 + sparsity + KV cache optimization for fast inference.",
-    "tags": ["Hardware", "LLM", "FPGA/ASIC"],
-    "links": [
-      { "label": "Repo", "href": "https://github.com/" },
-      { "label": "Paper", "href": "#" }
-    ]
+    "img": "assets/img/research_1/ai_system_design.png",
+    "title": "AI System Design",
+    "caption": "Exploring Full-Stack AI Acceleration",
+    "link": "research.html"
   },
   {
-    "title": "Memory-Centric Architecture for AI",
-    "summary": "HBM/3D-stacked memory and PIM approaches to remove memory bottlenecks.",
-    "tags": ["Memory", "PIM", "Architecture"],
-    "links": [
-      { "label": "Slides", "href": "#" }
-    ]
+    "img": "assets/img/research_1/algorithm_hardware_co_design.png",
+    "title": "Algorithm-Hardware Co-Design",
+    "caption": "Optimizing AI Models for Hardware",
+    "link": "research.html"
+  },
+  {
+    "img": "assets/img/research_1/serq.png",
+    "title": "SERQ Framework",
+    "caption": "Advanced Model Quantization",
+    "link": "research.html"
+  },
+  {
+    "img": "assets/img/research_1/dataflow_accelerator.png",
+    "title": "Dataflow Accelerator",
+    "caption": "System for ML Architectures",
+    "link": "research.html"
+  },
+  {
+    "img": "assets/img/research_2/mersit.png",
+    "title": "MERSIT",
+    "caption": "A Novel 8-bit PTQ Data Format for Various DNNs",
+    "link": "research.html"
+  },
+  {
+    "img": "assets/img/research_2/pnm.png",
+    "title": "Memory-Efficient Architecture",
+    "caption": "Scalable Hardware-Software Solutions for Massive-Scale AI Retrieval Systems",
+    "link": "research.html"
+  },
+  {
+    "img": "assets/img/research_2/mixed_precision.png",
+    "title": "Mixed Precision Architecture",
+    "caption": "Efficient Hardware Designs",
+    "link": "research.html"
+  },
+  {
+    "img": "assets/img/research_2/sparsity.png",
+    "title": "Sparsity-aware PE Architecture",
+    "caption": "Removing Redundant Multiplications and Repetitive Data",
+    "link": "research.html"
   }
 ]

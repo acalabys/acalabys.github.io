@@ -556,6 +556,7 @@ function renderGallery(items) {
 
   const tagSelect = document.getElementById("galleryTag");
   const search = document.getElementById("gallerySearch");
+  const segCtrl = document.getElementById("gallerySeg");
 
   // tags
   const allTags = new Set();
@@ -579,6 +580,7 @@ function renderGallery(items) {
 
   let current = 0;
   let filtered = [...items];
+  let activeCategory = "academic";
 
   const openLB = (idx, overrideSrc = null) => {
     current = Math.max(0, Math.min(idx, filtered.length - 1));
@@ -636,7 +638,8 @@ function renderGallery(items) {
       const hay = `${it.title || ""} ${it.desc || ""} ${it.date || ""} ${(it.tags || []).join(" ")}`.toLowerCase();
       const matchQ = !q || hay.includes(q);
       const matchT = !tag || (it.tags || []).includes(tag);
-      return matchQ && matchT;
+      const matchCat = !activeCategory || it.category === activeCategory;
+      return matchQ && matchT && matchCat;
     });
 
     grid.innerHTML = "";
@@ -738,6 +741,15 @@ function renderGallery(items) {
   search?.addEventListener("input", render);
   tagSelect?.addEventListener("change", render);
 
+  segCtrl?.addEventListener("click", (e) => {
+    const btn = e.target.closest(".seg-btn");
+    if (!btn) return;
+    [...segCtrl.querySelectorAll(".seg-btn")].forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    activeCategory = btn.dataset.category || "";
+    render();
+  });
+
   render();
 }
 
@@ -787,12 +799,7 @@ function initHeroCarousel(items) {
 
   if (!Array.isArray(items) || items.length === 0) return;
 
-  // 첫 번째 아이템(ACALab 로고 등)을 고정하고, 나머지 중 3개를 랜덤으로 선택하여 총 4장 구성
-  const firstItem = items[0];
-  const restItems = items.slice(1);
-  const shuffledRest = [...restItems].sort(() => 0.5 - Math.random());
-  const selectedItems = [firstItem, ...shuffledRest.slice(0, 3)];
-
+  const selectedItems = items;
   let idx = 0;
 
   const render = () => {
@@ -879,7 +886,48 @@ async function main() {
     renderHero(site);
     const news = await fetchJSON("data/news.json");
     renderNews(news);
-    const slides = await fetchJSON("data/hero_carousel.json");
+    
+    // 1. Fetch hero_carousel.json (contains logo)
+    const heroItems = await fetchJSON("data/hero_carousel.json");
+    // 2. Fetch gallery.json
+    const galleryRaw = await fetchJSON("data/gallery.json");
+    // 3. Fetch research.json
+    const researchRaw = await fetchJSON("data/research.json");
+    
+    // Extract fixed first item (logo)
+    const fixedLogo = heroItems.length > 0 ? heroItems[0] : null;
+    
+    // Map research items to carousel format
+    const researchItems = researchRaw.map(it => ({
+      img: it.img || "",
+      title: it.title || "Research",
+      caption: it.caption || it.summary || "",
+      link: it.link || "research.html"
+    })).filter(item => item.img);
+
+    // Map gallery items to carousel format
+    const galleryItems = galleryRaw.map(it => ({
+      img: (it.images && it.images.length > 0) ? it.images[0] : (it.src || it.thumb),
+      title: it.title || "Gallery",
+      caption: it.date || "",
+      link: "gallery.html"
+    })).filter(item => item.img);
+    
+    // Combine research and gallery images
+    const pool = [...researchItems, ...galleryItems];
+    
+    // Shuffle pool
+    for (let i = pool.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [pool[i], pool[j]] = [pool[j], pool[i]];
+    }
+    
+    // Pick 5 random items (or fewer if pool is small)
+    const randomItems = pool.slice(0, 5);
+    
+    // Final slides: Logo + Random items
+    const slides = fixedLogo ? [fixedLogo, ...randomItems] : randomItems;
+    
     initHeroCarousel(slides);
   } else if (page === "members") {
     const members = await fetchJSON("data/members.json");

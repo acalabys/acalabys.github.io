@@ -10,6 +10,7 @@
     "title": "ICLR 2026",
     "desc": "",
     "date": "2026-04-23",
+    "category": "academic",
     "tags": []
   },
   {
@@ -24,6 +25,7 @@
     "title": "Futsal",
     "desc": "",
     "date": "2026-02-24",
+    "category": "activity",
     "tags": []
   },
   {
@@ -32,6 +34,7 @@
     "title": "New Year Party",
     "desc": "",
     "date": "2026-01-27",
+    "category": "activity",
     "tags": []
   },
   {
@@ -40,6 +43,7 @@
     "title": "Year End Party",
     "desc": "",
     "date": "2025-12-19",
+    "category": "activity",
     "tags": []
   },
   {
@@ -54,6 +58,7 @@
     "title": "Workshop",
     "desc": "",
     "date": "2025-08-21",
+    "category": "activity",
     "tags": []
   },
   {
@@ -62,6 +67,7 @@
     "title": "IEIE Summer Conference 2025",
     "desc": "",
     "date": "2025-06-25",
+    "category": "academic",
     "tags": []
   },
   {
@@ -70,6 +76,7 @@
     "title": "DAC 2025",
     "desc": "",
     "date": "2025-04-17",
+    "category": "academic",
     "tags": []
   },
   {
@@ -78,6 +85,7 @@
     "title": "Spring Picnic",
     "desc": "",
     "date": "2025-04-11",
+    "category": "activity",
     "tags": []
   }
 ]
