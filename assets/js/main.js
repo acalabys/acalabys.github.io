@@ -329,7 +329,7 @@ function renderPublications(itemsRaw) {
       
         const title = document.createElement("div");
         title.className = "pub-title";
-        title.textContent = p.title || "";
+        title.innerHTML = p.title || "";
       
         const meta = document.createElement("div");
         meta.className = "pub-meta";
