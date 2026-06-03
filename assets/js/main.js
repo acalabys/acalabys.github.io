@@ -348,7 +348,7 @@ function renderPublications(itemsRaw) {
           if (p.earlyAccess) bits.push("early access");
           if (bits.length) metaPart = ", " + bits.join(", ");
         }
-        where.innerHTML = `<b>${safeText(venuePart)}</b><span class="pub-where-meta">${safeText(metaPart)}</span>`;
+        where.innerHTML = `<b>${venuePart}</b><span class="pub-where-meta">${safeText(metaPart)}</span>`;
 
         // marks (venue 옆으로)
         const marksRow = document.createElement("div");
