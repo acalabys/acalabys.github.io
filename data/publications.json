@@ -1,7 +1,20 @@
 [
   {
     "year": 2026,
-    "date": "2026-08",
+    "date": "2026-06",
+    "region": "international",
+    "type": "journal",
+    "title": "BAGS: A Bit-Partitioned Quantization-Aware Architecture for Accelerating Graph-Based Approximate Nearest Neighbor Search",
+    "authors": "Seongjoon Cho, Junyoung Park, Minje Park and Seungkyu Choi",
+    "venueDisplay": "Journal of Systems Architecture (JSA)",
+    "marks": ["scie-q1"],
+    "links": [
+      { "label": "DOI", "href": "https://doi.org/10.1016/j.sysarc.2026.xxx" }
+    ]
+  },
+  {
+    "year": 2026,
+    "date": "2026-05",
     "region": "international",
     "type": "conference",
     "title": "L<sup>2</sup>Mersit: A Scaling-Free Sub-8-bit Data Format for On-Device Reliable Large Language Model Serving",
@@ -14,7 +27,7 @@
   },
   {
     "year": 2026,
-    "date": "2026-07",
+    "date": "2026-02",
     "region": "international",
     "type": "conference",
     "title": "LOHA: A Latency-Optimized CPU-Storage Hybrid Architecture for Billion-Scale Graph-based Vector Similarity Search",
@@ -27,7 +40,7 @@
   },
   {
     "year": 2026,
-    "date": "2026-04",
+    "date": "2026-01",
     "region": "international",
     "type": "conference",
     "title": "SERQ: Saliency-Aware Low-Rank Error Reconstruction for LLM Quantization",
@@ -40,7 +53,7 @@
   },
   {
     "year": 2026,
-    "date": "2026-02",
+    "date": "2025-12",
     "region": "international",
     "type": "journal",
     "title": "Q-VESA: Accelerating Quantization-Aware Vector Search for Fast Retrieval in Prompt Engineering",
@@ -57,7 +70,7 @@
   },
   {
     "year": 2025,
-    "date": "2025-11",
+    "date": "2025-7",
     "region": "international",
     "type": "journal",
     "title": "Accelerating On-Device Visual Task Adaptation by Exploiting Hybrid Sparsity in DNN Training",
