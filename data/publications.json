@@ -7,9 +7,12 @@
     "title": "BAGS: A Bit-Partitioned Quantization-Aware Architecture for Accelerating Graph-Based Approximate Nearest Neighbor Search",
     "authors": "Seongjoon Cho, Junyoung Park, Minje Park and Seungkyu Choi",
     "venueDisplay": "Journal of Systems Architecture (JSA)",
+    "volume": "178",
+    "issue": "103897",
+    "pubDate": "September 2026",
     "marks": ["scie-q1"],
     "links": [
-      { "label": "DOI", "href": "https://doi.org/10.1016/j.sysarc.2026.xxx" }
+      { "label": "DOI", "href": "https://doi.org/10.1016/j.sysarc.2026.103897" }
     ]
   },
   {
