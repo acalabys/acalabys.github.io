@@ -1,6 +1,32 @@
 [
   {
     "year": 2026,
+    "date": "2026-07",
+    "region": "international",
+    "type": "conference",
+    "title": "MeltKV: Memory-Aligned KV Cache Compression via Variable-Bit Packed Vector Quantization for Long-Context LLMs",
+    "authors": "Jiyun Han, Seongjoon Cho, Seungkyu Choi",
+      "venueDisplay": "IEEE/ACM International Conference on Computer-Aided Design (ICCAD)",
+      "marks": ["top-tier", "cs"],
+    "links": [
+      { "label": "DOI", "href": "https://doi.org/xxx" }
+    ]
+  },
+  {
+    "year": 2026,
+    "date": "2026-07",
+    "region": "international",
+    "type": "conference",
+    "title": "FALCON: A CORDIC-based FlashAttention Accelerator for On-Device Long-Context LLM Inference",
+    "authors": "Junyoung Park, Seongjoon Cho, Seungkyu Choi",
+      "venueDisplay": "IEEE/ACM International Conference on Computer-Aided Design (ICCAD)",
+      "marks": ["top-tier", "cs"],
+    "links": [
+      { "label": "DOI", "href": "https://doi.org/xxx" }
+    ]
+  },
+  {
+    "year": 2026,
     "date": "2026-06",
     "region": "international",
     "type": "journal",
