@@ -68,6 +68,46 @@
       "email": "kimj@khu.ac.kr",
       "photo": "assets/img/members/mjkim.jpg",
       "links": []
+    },
+    {
+      "name": "Bugun Hwang",
+      "role": "M.S. Candidate",
+      "bio": "• Topic: \nAI accelerator design, KAN acceleration",
+      "email": "qnrjs1122@yonsei.ac.kr",
+      "photo": "assets/img/members/bghwang.jpg",
+      "links": []
+    },
+    {
+      "name": "Wonwoo Lee",
+      "role": "M.S. Candidate",
+      "bio": "• Topic: \nSW-HW Co-design, On-device AI",
+      "email": "wonwoo39@yonsei.ac.kr",
+      "photo": "assets/img/members/wwlee.jpg",
+      "links": []
+    },
+    {
+      "name": "Sanghun Kang",
+      "role": "M.S. Candidate",
+      "bio": "• Topic: \nLLM acceleration, SW-HW Co-design",
+      "email": "sanghun2025@yonsei.ac.kr",
+      "photo": "",
+      "links": []
+    },
+    {
+      "name": "Jungi Kim",
+      "role": "M.S. Candidate",
+      "bio": "• Topic: \nSW-HW Co-design, Memory-Centric Architecture",
+      "email": "",
+      "photo": "assets/img/members/jgkim.jpg",
+      "links": []
+    },
+    {
+      "name": "Soomin Nam",
+      "role": "M.S. Candidate",
+      "bio": "• Topic: \nLLM acceleration",
+      "email": "sarahsmnam@yonsei.ac.kr",
+      "photo": "assets/img/members/smnam.jpg",
+      "links": []
     }
   ],
   "alumni": [
