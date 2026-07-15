@@ -14,22 +14,6 @@
   ],
   "students": [
     {
-      "name": "Seongjoon Cho",
-      "role": "M.S. Candidate",
-      "bio": "• Topic: \nSW-HW Co-Design, Memory-Centric Architecture",
-      "email": "csj0725@khu.ac.kr",
-      "photo": "assets/img/members/sjcho.jpg",
-      "links": []
-    },
-    {
-      "name": "Minje Park",
-      "role": "M.S. Candidate",
-      "bio": "• Topic: \nMultimodal AI hardware, pruning/sparsity",
-      "email": "pmj990@khu.ac.kr",
-      "photo": "assets/img/members/mjpark.jpg",
-      "links": []
-    },
-    {
       "name": "Junyoung Park",
       "role": "M.S. Candidate",
       "bio": "• Topic: \nAI accelerator design, RAG systems",
@@ -47,7 +31,7 @@
     },
     {
       "name": "Yeonsik Park",
-      "role": "M.S. Candidate",
+      "role": "Ph.D. Candidate",
       "bio": "• Topic: \nLLM acceleration and quantization",
       "email": "plsik125@khu.ac.kr",
       "photo": "assets/img/members/yspark.jpg",
@@ -103,7 +87,7 @@
     },
     {
       "name": "Soomin Nam",
-      "role": "M.S. Candidate",
+      "role": "M.S./Ph.D. Integrated",
       "bio": "• Topic: \nLLM acceleration",
       "email": "sarahsmnam@yonsei.ac.kr",
       "photo": "assets/img/members/smnam.jpg",
@@ -112,10 +96,17 @@
   ],
   "alumni": [
     {
-      "name": "Alumni A",
-      "role": "dd",
-      "bio": "Graduated 202X",
-      "photo": "",
+      "name": "Seongjoon Cho",
+      "role": "M.S. in 2026",
+      "bio": " Graduated 2026",
+      "photo": "assets/img/members/sjcho.jpg",
+      "links": []
+    },
+    {
+      "name": "Minje Park",
+      "role": "M.S. in 2026",
+      "bio": " Graduated 2026",
+      "photo": "assets/img/members/mjpark.jpg",
       "links": []
     }
   ]

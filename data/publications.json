@@ -47,7 +47,7 @@
     "region": "international",
     "type": "conference",
     "title": "L<sup>2</sup>Mersit: A Scaling-Free Sub-8-bit Data Format for On-Device Reliable Large Language Model Serving",
-    "authors": "Myeongjin Kim, Hyeonseong Kim, Ik Joon Chang, and Seungkyu Choi",
+    "authors": "Myeongjin Kim*, Hyeonseong Kim*, Ik Joon Chang, and Seungkyu Choi",
     "venueDisplay": "IEEE/ACM International Symposium on Low Power Electronics and Design (ISLPED) <span style=\"color: #ef4444; font-weight: bold; font-style: normal;\">(Best Paper Candidate)</span>",
     "marks": ["major", "cs"],
     "links": [
@@ -119,7 +119,7 @@
     "region": "international",
     "type": "conference",
     "title": "Precon: A Precision-Convertible Architecture for Accelerating Quantized Deep Learning Models across Various Domains Including LLMs",
-    "authors": "Jongwoo Park, Hyeonsung Kim, Jiyun Han, and Seungkyu Choi",
+    "authors": "Jongwoo Park*, Hyeonsung Kim*, Jiyun Han, and Seungkyu Choi",
     "venueDisplay": "ACM/IEEE Design Automation Conference (DAC)",
     "marks": ["top-tier", "cs"],
     "links": [

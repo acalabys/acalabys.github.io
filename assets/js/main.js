@@ -417,7 +417,8 @@ function renderPublications(itemsRaw) {
 
 function renderMembers(members) {
   const piGrid = document.getElementById("piGrid");
-  const studentGrid = document.getElementById("studentGrid");
+  const phdStudentGrid = document.getElementById("phdStudentGrid");
+  const msStudentGrid = document.getElementById("msStudentGrid");
   const alumniGrid = document.getElementById("alumniGrid");
 
   // type: "pi" | "student" | "alumni"
@@ -438,9 +439,7 @@ function renderMembers(members) {
         img.decoding = "async";
         left = img;
       } else {
-        const avatar = el("div", "avatar");
-        avatar.textContent = (m.name || "M").trim().slice(0, 2).toUpperCase();
-        left = avatar;
+        left = el("div", "avatar"); // 사진 없음 → CSS로 사람 실루엣 표시
       }
 
       card.appendChild(left);
@@ -499,11 +498,24 @@ function renderMembers(members) {
     (members.pi || []).forEach((m) => piGrid.appendChild(renderCard(m, "pi")));
   }
 
-  if (studentGrid) {
-    studentGrid.innerHTML = "";
-    (members.students || []).forEach((m) =>
-      studentGrid.appendChild(renderCard(m, "student"))
-    );
+  // role 예: "Ph.D. Candidate", "M.S. Candidate", "M.S.-Ph.D. Integrated"
+  // Ph.D가 들어가면(Integrated 포함) Ph.D. 섹션, 아니면 M.S. 섹션
+  const isPhdStudent = (m) => /ph\.?\s*d/i.test(m.role || "");
+  const isMsStudent = (m) =>
+    /m\.?\s*s/i.test(m.role || "") && !isPhdStudent(m);
+
+  if (phdStudentGrid) {
+    phdStudentGrid.innerHTML = "";
+    (members.students || [])
+      .filter(isPhdStudent)
+      .forEach((m) => phdStudentGrid.appendChild(renderCard(m, "student")));
+  }
+
+  if (msStudentGrid) {
+    msStudentGrid.innerHTML = "";
+    (members.students || [])
+      .filter(isMsStudent)
+      .forEach((m) => msStudentGrid.appendChild(renderCard(m, "student")));
   }
 
   if (alumniGrid) {
