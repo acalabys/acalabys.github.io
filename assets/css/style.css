@@ -563,7 +563,7 @@ h3{margin:0 0 8px; font-size:18px}
 .member{
   display:flex;
   gap:14px;
-  padding:16px;
+  padding:16px 16px 12px;
 }
 
 .members-sections{
@@ -593,7 +593,7 @@ h3{margin:0 0 8px; font-size:18px}
 
 .member-role{
   font-weight: 600;
-  margin-bottom: 4px;
+  margin-bottom: 0;
 }
 
 .member-bio{
@@ -601,6 +601,7 @@ h3{margin:0 0 8px; font-size:18px}
   padding-left: 0.8em; 
   text-indent: -0.8em;  
   line-height: 1.55;
+  margin: 4px 0 0; /* p 기본 마진 제거 후 topic 위 여백만 살짝하게 */
 }
 
 .member-email{
@@ -615,7 +616,7 @@ h3{margin:0 0 8px; font-size:18px}
   font-weight: 800;
   font-size: 13px;
   text-decoration: none;
-  margin-top: 6px;
+  margin-top: 3px;
 }
 
 .member-pi .avatar,
