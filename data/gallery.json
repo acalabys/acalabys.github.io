@@ -1,6 +1,18 @@
 [
   {
     "images": [
+      "assets/img/gallery/260505_teachers_day.jpg"
+    ],
+    "src": "assets/img/gallery/260505_teachers_day.jpg",
+    "thumb": "assets/img/gallery/260505_teachers_day.jpg",
+    "title": "Teacher's Day",
+    "desc": "",
+    "date": "2026-05-05",
+    "category": "activity",
+    "tags": []
+  },
+  {
+    "images": [
       "assets/img/gallery/260423_iclr2026_1.jpg",
       "assets/img/gallery/260423_iclr2026_2.jpg",
       "assets/img/gallery/260423_iclr2026_3.JPG"
