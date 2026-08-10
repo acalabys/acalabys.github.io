@@ -1,6 +1,34 @@
 [
   {
     "images": [
+      "assets/img/gallery/260805_islped2026_1.jpeg",
+      "assets/img/gallery/260805_islped2026_2.jpeg",
+      "assets/img/gallery/260805_islped2026_3.jpeg"
+    ],
+    "src": "assets/img/gallery/260805_islped2026_1.jpeg",
+    "thumb": "assets/img/gallery/260805_islped2026_1.jpeg",
+    "title": "ISLPED 2026",
+    "desc": "",
+    "date": "2026-08-05",
+    "category": "academic",
+    "tags": []
+  },
+  {
+    "images": [
+      "assets/img/gallery/260726_dac2026_1.jpeg",
+      "assets/img/gallery/260726_dac2026_2.jpeg",
+      "assets/img/gallery/260726_dac2026_3.jpeg"
+    ],
+    "src": "assets/img/gallery/260726_dac2026_1.jpeg",
+    "thumb": "assets/img/gallery/260726_dac2026_1.jpeg",
+    "title": "DAC 2026",
+    "desc": "",
+    "date": "2026-07-26",
+    "category": "academic",
+    "tags": []
+  },
+  {
+    "images": [
       "assets/img/gallery/260505_teachers_day.jpg"
     ],
     "src": "assets/img/gallery/260505_teachers_day.jpg",

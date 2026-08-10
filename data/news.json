@@ -1,9 +1,12 @@
 [
   {
+    "desc": "<b>[2026-08-07]</b>&nbsp;&nbsp;Our group's paper \"<strong>L<sup>2</sup>Mersit: A Scaling-Free Sub-8-bit Data Format for On-Device Reliable Large Language Model Serving</strong>\" has won the <strong style=\"color: #ef4444;\">Best Paper Award</strong> at <strong>ISLPED'26</strong>. Congratulations Myeongjin and Hyeonseong 🎉"
+  },
+  {
     "desc": "<b>[2026-07-15]</b>&nbsp;&nbsp;Bugun, Wonwoo, Sanghun, Jungi and Soomin have joined our group as M.S. candidates. Welcome!"
   },
   {
-    "desc": "<b>[2026-07-13]</b>&nbsp;&nbsp;Two papers in our group \"<strong>MeltKV: Memory-Aligned KV Cache Compression via Variable-Bit Packed Vector Quantization for Long-Context LLMs</strong>\" and \"<strong>FALCON: A CORDIC-based FlashAttention Accelerator for On-Device Long-Context LLM Inference</strong>\" have been accepted to <strong>ICCAD'26</strong>. Congratulations Jiyun and Junyoung🎉"
+    "desc": "<b>[2026-07-13]</b>&nbsp;&nbsp;Two papers in our group \"<strong>MeltKV: Memory-Aligned KV Cache Compression via Variable-Bit Packed Vector Quantization for Long-Context LLMs</strong>\" and \"<strong>FALCON: A CORDIC-based FlashAttention Accelerator for On-Device Long-Context LLM Inference</strong>\" have been accepted to <strong>ICCAD'26</strong>. Congratulations Jiyun and Junyoung 🎉"
   },
   {
     "desc": "<b>[2026-06-11]</b>&nbsp;&nbsp;Our group's paper \"<strong>BAGS: A Bit-Partitioned Quantization-Aware Architecture for Accelerating Graph-Based Approximate Nearest Neighbor Search</strong>\" has been accepted to <strong>Journal of Systems Architecture</strong>. Congratulations Seongjoon, Junyoung and Minje!"
