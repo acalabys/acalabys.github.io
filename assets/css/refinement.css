@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/space-grotesk-400.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/space-grotesk-500.ttf") format("truetype");
+}
 /* ACA Lab — a restrained blue identity, shared by every page. */
 :root {
   --bg: #ffffff;
@@ -36,7 +50,7 @@ h3 { font-size: 1.2rem; }
 .skip-link:focus { top: 12px; }
 
 /* A quiet masthead, with a precise underline instead of navigation pills. */
-.header { background: #10366e; border-bottom: 1px solid #ffffff20; }
+.header { background: #09254b; border-bottom: 1px solid #ffffff14; }
 .nav { min-height: 88px; gap: 24px; }
 .brand { gap: 16px; min-width: 0; }
 .brand:hover { text-decoration: none; }
@@ -194,7 +208,7 @@ h3 { font-size: 1.2rem; }
   .container { padding-inline: 24px; }
   .nav { min-height: 76px; }
   .brand-name { max-width: 190px; }
-  .nav-menu { top: 76px; right: 24px; width: min(280px, calc(100vw - 48px)); padding: 12px 20px; border-radius: 5px; gap: 0; align-items: stretch; box-shadow: 0 16px 36px #061b3740; }
+  .nav-menu { top: 76px; right: 24px; width: min(280px, calc(100vw - 48px)); padding: 12px 20px; border-radius: 5px; gap: 0; align-items: stretch; background: #09254b; box-shadow: 0 16px 36px #061b3740; }
   .nav-menu a { display: block; padding: 12px 0; }
   .hero { padding: 48px 0 38px; }
   .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
@@ -243,4 +257,56 @@ h3 { font-size: 1.2rem; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* An etched silicon backdrop with a clear, three-line lab signature. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  background-color: #10366e;
+  background-image: none;
+  background-position: center;
+  padding-block: 60px 54px;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: linear-gradient(90deg, #10366e25, #17458308), url("../img/hero-circuit-blue.webp");
+  background-size: cover;
+  background-position: inherit;
+  background-repeat: no-repeat;
+  filter: brightness(1.35) contrast(1.08);
+}
+.hero .hero-title {
+  font-family: "Space Grotesk", var(--font);
+  font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -.055em;
+  margin: 0 0 25px;
+  max-width: none;
+}
+.hero-title-line { display: block; }
+.hero-title-line:nth-child(2) { color: #d5e4f8; }
+.hero-title-line:nth-child(3) { color: #b9d6ff; }
+.hero-title-lab {
+  display: block;
+  margin-top: 17px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: .12em;
+  color: #ffffff;
+}
+.hero .kicker { margin-bottom: 20px; }
+@media (max-width: 860px) {
+  .hero { background-position: 58% center; padding-block: 44px 36px; }
+  .hero .hero-title { font-size: clamp(2.7rem, 7.5vw, 3.8rem); }
+}
+@media (max-width: 560px) {
+  .hero { background-position: 55% center; }
+  .hero .hero-title { font-size: clamp(2.35rem, 10.5vw, 3.2rem); }
 }
