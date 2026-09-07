@@ -261,12 +261,24 @@ h3 { font-size: 1.2rem; }
 
 /* An etched silicon backdrop with a clear, three-line lab signature. */
 .hero {
+  position: relative;
+  isolation: isolate;
   background-color: #10366e;
+  background-image: none;
+  background-position: center;
+  padding-block: 60px 54px;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-image: linear-gradient(90deg, #10366e25, #17458308), url("../img/hero-circuit-blue.webp");
   background-size: cover;
-  background-position: center;
+  background-position: inherit;
   background-repeat: no-repeat;
-  padding-block: 60px 54px;
+  filter: brightness(1.35) contrast(1.08);
 }
 .hero .hero-title {
   font-family: "Space Grotesk", var(--font);
