@@ -50,7 +50,7 @@ h3 { font-size: 1.2rem; }
 .skip-link:focus { top: 12px; }
 
 /* A quiet masthead, with a precise underline instead of navigation pills. */
-.header { background: #10366e; border-bottom: 1px solid #ffffff20; }
+.header { background: #09254b; border-bottom: 1px solid #ffffff14; }
 .nav { min-height: 88px; gap: 24px; }
 .brand { gap: 16px; min-width: 0; }
 .brand:hover { text-decoration: none; }
@@ -208,7 +208,7 @@ h3 { font-size: 1.2rem; }
   .container { padding-inline: 24px; }
   .nav { min-height: 76px; }
   .brand-name { max-width: 190px; }
-  .nav-menu { top: 76px; right: 24px; width: min(280px, calc(100vw - 48px)); padding: 12px 20px; border-radius: 5px; gap: 0; align-items: stretch; box-shadow: 0 16px 36px #061b3740; }
+  .nav-menu { top: 76px; right: 24px; width: min(280px, calc(100vw - 48px)); padding: 12px 20px; border-radius: 5px; gap: 0; align-items: stretch; background: #09254b; box-shadow: 0 16px 36px #061b3740; }
   .nav-menu a { display: block; padding: 12px 0; }
   .hero { padding: 48px 0 38px; }
   .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
@@ -299,7 +299,7 @@ h3 { font-size: 1.2rem; }
   font-weight: 500;
   line-height: 1.4;
   letter-spacing: .12em;
-  color: #d5e4f8;
+  color: #a8d8ea;
 }
 .hero .kicker { margin-bottom: 20px; }
 @media (max-width: 860px) {
