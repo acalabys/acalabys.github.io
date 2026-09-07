@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/space-grotesk-400.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Space Grotesk";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/space-grotesk-500.ttf") format("truetype");
+}
 /* ACA Lab — a restrained blue identity, shared by every page. */
 :root {
   --bg: #ffffff;
@@ -243,4 +257,43 @@ h3 { font-size: 1.2rem; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* An etched silicon backdrop with a clear, three-line lab signature. */
+.hero {
+  background-color: #10366e;
+  background-image: linear-gradient(90deg, #10366e25, #17458308), url("../img/hero-circuit-blue.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-block: 60px 54px;
+}
+.hero .hero-title {
+  font-family: "Space Grotesk", var(--font);
+  font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -.055em;
+  margin: 0 0 25px;
+  max-width: none;
+}
+.hero-title-line { display: block; }
+.hero-title-line:nth-child(3) { color: #b9d6ff; }
+.hero-title-lab {
+  display: block;
+  margin-top: 17px;
+  font-size: .875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: .12em;
+  color: #d5e4f8;
+}
+.hero .kicker { margin-bottom: 20px; }
+@media (max-width: 860px) {
+  .hero { background-position: 58% center; padding-block: 44px 36px; }
+  .hero .hero-title { font-size: clamp(2.7rem, 7.5vw, 3.8rem); }
+}
+@media (max-width: 560px) {
+  .hero { background-position: 55% center; }
+  .hero .hero-title { font-size: clamp(2.35rem, 10.5vw, 3.2rem); }
 }
