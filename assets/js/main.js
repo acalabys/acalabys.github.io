@@ -31,6 +31,13 @@ function setupMobileNav() {
     const open = menu.classList.toggle("open");
     btn.setAttribute("aria-expanded", String(open));
   });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menu.classList.contains("open")) {
+      menu.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      btn.focus();
+    }
+  });
 }
 
 function applySiteBranding(site) {
@@ -144,7 +151,7 @@ function renderNews(news) {
     const row = el("div", "news-row");
 
     if (dateText) {
-      const dateEl = el("div", "news-date", `<span class="pill"><b>[${safeText(dateText)}]</b></span>`);
+      const dateEl = el("div", "news-date", `<span class="pill"><b>${safeText(dateText)}</b></span>`);
       row.appendChild(dateEl);
     }
 
@@ -257,7 +264,9 @@ function renderPublications(itemsRaw) {
   const setActiveSeg = (region) => {
     if (!regionSeg) return;
     [...regionSeg.querySelectorAll(".seg-btn")].forEach(btn => {
-      btn.classList.toggle("active", (btn.dataset.region || "") === region);
+      const active = (btn.dataset.region || "") === region;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-pressed", String(active));
     });
   };
 
@@ -269,7 +278,7 @@ function renderPublications(itemsRaw) {
       const matchType = !state.type || p.type === state.type;
 
       const hay = [
-        p.title, p.authors, p.venue, p.detail,
+        p.title, p.authors, p.venueDisplay, p.venue, p.detail,
         String(p.year),
         (p.marks || []).join(" "),
         p.region, p.type
@@ -355,6 +364,7 @@ function renderPublications(itemsRaw) {
         marksRow.className = "mark-row inline";
         (p.marks || []).forEach(mk => {
           const span = document.createElement("span");
+          mk = String(mk).toLowerCase();
           span.className = `mark mark-${mk}`;
           span.textContent = (MARK_LABEL && MARK_LABEL[mk]) ? MARK_LABEL[mk] : mk; // MARK_LABEL 쓰는 버전이면 유지
           marksRow.appendChild(span);
@@ -466,7 +476,7 @@ function renderMembers(members) {
       emailRow.className = "member-email";
       const a = document.createElement("a");
       //a.className = "email-link"; //If email link
-      //a.href = `mailto:${m.email}`; //If email link
+      a.href = `mailto:${m.email}`;
       a.textContent = m.email;
       emailRow.appendChild(a);
       body.appendChild(emailRow);
@@ -834,6 +844,7 @@ function initHeroCarousel(items) {
       const b = document.createElement("button");
       b.type = "button";
       b.className = "dot" + (i === idx ? " active" : "");
+      b.setAttribute("aria-current", String(i === idx));
       b.setAttribute("aria-label", `Go to slide ${i + 1}`);
       b.addEventListener("click", () => { idx = i; render(); });
       dots.appendChild(b);
@@ -878,10 +889,25 @@ function initHeroCarousel(items) {
     if (Math.abs(dx) > 40) go(dx > 0 ? -1 : 1);
   }, { passive: true });
 
-  // optional auto-advance (원치 않으면 삭제)
-  let timer = setInterval(() => go(1), 6500);
-  root.addEventListener("mouseenter", () => { clearInterval(timer); });
-  root.addEventListener("mouseleave", () => { timer = setInterval(() => go(1), 6500); });
+  // Pause motion for keyboard users and reduced-motion preferences.
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let timer = null;
+  const stop = () => { clearInterval(timer); timer = null; };
+  const start = () => {
+    stop();
+    if (!reducedMotion.matches && !document.hidden &&
+        !root.matches(":hover") && !root.contains(document.activeElement) &&
+        !dots.contains(document.activeElement)) timer = setInterval(() => go(1), 6500);
+  };
+  root.addEventListener("mouseenter", stop);
+  root.addEventListener("mouseleave", start);
+  root.addEventListener("focusin", stop);
+  root.addEventListener("focusout", () => setTimeout(start, 0));
+  dots.addEventListener("focusin", stop);
+  dots.addEventListener("focusout", () => setTimeout(start, 0));
+  document.addEventListener("visibilitychange", start);
+  reducedMotion.addEventListener("change", start);
+  start();
 
   render();
 }
@@ -960,7 +986,7 @@ async function main() {
 
 main().catch((e) => {
   console.error(e);
-  const mainEl = document.getElementById("main");
+  const mainEl = document.querySelector("main");
   if (mainEl) {
     const err = document.createElement("div");
     err.className = "container page";
